@@ -1,0 +1,82 @@
+[
+  {
+    "id": 1,
+    "product": "Portable Electric Blender",
+    "price": "$29.99",
+    "features": "USB rechargeable, 6 stainless steel blades, BPA free, fits in cup holder",
+    "niche": "kitchen gadgets",
+    "published": false
+  },
+  {
+    "id": 2,
+    "product": "Ergonomic Memory Foam Seat Cushion",
+    "price": "$34.99",
+    "features": "tailbone pain relief, breathable mesh cover, non-slip bottom, doctor recommended",
+    "niche": "home office",
+    "published": false
+  },
+  {
+    "id": 3,
+    "product": "3-in-1 Foldable Wireless Charging Station",
+    "price": "$27.99",
+    "features": "charges phone watch and earbuds, fast charging, compact travel design, LED indicator",
+    "niche": "tech gadgets",
+    "published": false
+  },
+  {
+    "id": 4,
+    "product": "Deep Tissue Percussion Massage Gun",
+    "price": "$49.99",
+    "features": "6 speed levels, 4 head attachments, ultra-quiet motor, long battery life",
+    "niche": "fitness tech",
+    "published": false
+  },
+  {
+    "id": 5,
+    "product": "High-Power Cordless Car Vacuum Cleaner",
+    "price": "$25.99",
+    "features": "9000Pa suction, washable HEPA filter, lightweight portable, LED light",
+    "niche": "car accessories",
+    "published": false
+  },
+  {
+    "id": 6,
+    "product": "Smart Sunset Projection Lamp",
+    "price": "$18.99",
+    "features": "16 RGB colors, remote control, 180 degree rotation, romantic ambient lighting",
+    "niche": "home decor",
+    "published": false
+  },
+  {
+    "id": 7,
+    "product": "Electric Milk Frother & Drink Mixer",
+    "price": "$12.99",
+    "features": "high-speed motor, stainless steel whisk, battery operated, easy clean",
+    "niche": "kitchen gadgets",
+    "published": false
+  },
+  {
+    "id": 8,
+    "product": "Magnetic Phone Mount for Car Dashboard",
+    "price": "$15.99",
+    "features": "N52 super magnets, 360 degree rotation, one-hand operation, universal fit",
+    "niche": "car accessories",
+    "published": false
+  },
+  {
+    "id": 9,
+    "product": "Automatic Scalp Massager & Shampoo Brush",
+    "price": "$19.99",
+    "features": "waterproof IPX7, 4 rotation massage heads, hair growth stimulation, rechargeable",
+    "niche": "beauty and care",
+    "published": false
+  },
+  {
+    "id": 10,
+    "product": "LED Desk Lamp with Wireless Charger",
+    "price": "$39.99",
+    "features": "5 color modes, touch control, auto timer, USB charging port",
+    "niche": "home office",
+    "published": false
+  }
+]

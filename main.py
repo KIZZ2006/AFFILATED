@@ -17,6 +17,7 @@ from uploader_youtube import upload_to_youtube
 from uploader_instagram import upload_to_instagram
 from amazon_affiliate import generate_affiliate_link
 from storefront import register_product
+from product_finder import get_next_product
 
 # Configure unified logging setup
 logging.basicConfig(
@@ -35,23 +36,23 @@ def parse_args():
     )
     parser.add_argument(
         "--product", 
-        required=True, 
-        help="Name of the product (e.g. 'Ergonomic Desk Chair')"
+        default="", 
+        help="Optional name of the product. If omitted, auto-selects from catalog/AI"
     )
     parser.add_argument(
         "--price", 
-        required=True, 
-        help="Price of the product (e.g. '$59.99')"
+        default="", 
+        help="Optional price of the product"
     )
     parser.add_argument(
         "--features", 
-        required=True, 
-        help="Comma-separated list of product features (e.g. 'memory foam,lumbar support,3D armrests')"
+        default="", 
+        help="Optional comma-separated list of product features"
     )
     parser.add_argument(
         "--niche", 
-        required=True, 
-        help="Niche category (e.g. 'home office')"
+        default="", 
+        help="Optional niche category"
     )
     parser.add_argument(
         "--publish", 
@@ -68,16 +69,30 @@ def parse_args():
 def main():
     args = parse_args()
     
+    # Auto-select product if not specified explicitly via CLI
+    if not args.product:
+        logger.info("[main] No product CLI argument provided. Auto-selecting from Product Catalog / AI Discovery...")
+        item = get_next_product()
+        product_name = item["product"]
+        price = item["price"]
+        niche = item["niche"]
+        features_input = item["features"]
+    else:
+        product_name = args.product
+        price = args.price
+        niche = args.niche
+        features_input = args.features
+
     # Parse list-based inputs
-    features_list = [f.strip() for f in args.features.split(",") if f.strip()]
+    features_list = [f.strip() for f in features_input.split(",") if isinstance(features_input, str) and f.strip()] if isinstance(features_input, str) else features_input
     publish_platforms = [p.strip().lower() for p in args.publish.split(",") if p.strip()]
 
     # Generate tracked Amazon Affiliate link & register in automated storefront
-    affiliate_url = generate_affiliate_link(args.product, args.amazon_url)
+    affiliate_url = generate_affiliate_link(product_name, args.amazon_url)
     storefront_url = register_product(
-        product_name=args.product,
-        price=args.price,
-        niche=args.niche,
+        product_name=product_name,
+        price=price,
+        niche=niche,
         affiliate_link=affiliate_url,
         features=features_list
     )
@@ -86,9 +101,9 @@ def main():
     
     logger.info("=" * 60)
     logger.info("YASNA CONTENT PIPELINE - AUTOMATED CAMPAIGN INITIALIZED")
-    logger.info(f"Product:  {args.product}")
-    logger.info(f"Price:    {args.price}")
-    logger.info(f"Niche:    {args.niche}")
+    logger.info(f"Product:  {product_name}")
+    logger.info(f"Price:    {price}")
+    logger.info(f"Niche:    {niche}")
     logger.info(f"Features: {features_list}")
     logger.info(f"Publishing Target: {publish_platforms if publish_platforms else 'None (Local-only)'}")
     logger.info("=" * 60)
@@ -109,10 +124,10 @@ def main():
     logger.info("[STAGE 1/7] Generating script using NVIDIA NIM API...")
     try:
         raw_script = generate_script(
-            product_name=args.product,
-            price=args.price,
+            product_name=product_name,
+            price=price,
             features=features_list,
-            niche=args.niche
+            niche=niche
         )
         raw_script_path = os.path.join(output_dir, "raw_script.txt")
         with open(raw_script_path, "w", encoding="utf-8") as f:
@@ -160,7 +175,7 @@ def main():
     logger.info("[STAGE 5/7] Querying Pexels stock video clips...")
     visuals_dir = os.path.join(output_dir, "visuals")
     # Build list of queries: starting from specific terms down to niche and features
-    keywords = [args.product, args.niche] + features_list[:2]
+    keywords = [product_name, niche] + features_list[:2]
     try:
         # Determine number of clips assuming each clip handles about 5-6s
         clip_count = max(3, int(duration // 5) + 1)
@@ -179,7 +194,7 @@ def main():
             clip_paths=clip_paths,
             voiceover_path=voiceover_path,
             ass_path=ass_path,
-            price_text=args.price,
+            price_text=price,
             output_path=final_video_path
         )
         logger.info(f"Video assembled successfully: {assembled_path}")
@@ -193,9 +208,9 @@ def main():
         if platform == "youtube":
             logger.info("Uploading to YouTube Shorts...")
             try:
-                title = f"{args.product} Review - {args.price}! #shorts"
-                description = f"Looking for the best {args.product}? Here's why you need it: {', '.join(features_list)}."
-                tags = [args.niche, args.product] + features_list
+                title = f"{product_name} Review - {price}! #shorts"
+                description = f"Looking for the best {product_name}? Here's why you need it: {', '.join(features_list)}."
+                tags = [niche, product_name] + features_list
                 video_url = upload_to_youtube(
                     video_path=final_video_path,
                     title=title,
@@ -209,12 +224,12 @@ def main():
             logger.info("Uploading to Instagram Reels via Graph API...")
             try:
                 ig_caption = (
-                    f"🔥 {args.product} — only {args.price}!\n\n"
+                    f"🔥 {product_name} — only {price}!\n\n"
                     f"✨ Features: {', '.join(features_list)}\n\n"
                     f"👇 How to get the link:\n"
                     f"1️⃣ Comment 'LINK' below and I'll send it directly to your DMs!\n"
                     f"2️⃣ Click the link in bio to buy now: {storefront_url}\n\n"
-                    f"#{args.niche.replace(' ', '')} #{args.product.replace(' ', '')} #amazonfinds #affiliate #deals"
+                    f"#{niche.replace(' ', '')} #{product_name.replace(' ', '').replace('-', '')} #amazonfinds #affiliate #deals"
                 )
                 ig_permalink = upload_to_instagram(
                     video_path=final_video_path,
