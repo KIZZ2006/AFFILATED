@@ -51,13 +51,13 @@ def load_spacy_nlp():
     Loads the 'en_core_web_sm' spaCy model.
     Downloads it automatically if not found locally.
     """
-    model_name = "en_core_web_sm"
     try:
-        return spacy.load(model_name)
+        return spacy.load("en_core_web_sm")
     except OSError:
-        logger.info(f"spaCy model '{model_name}' not found. Downloading...")
-        subprocess.run([sys.executable, "-m", "spacy", "download", model_name], check=True)
-        return spacy.load(model_name)
+        logger.info("Downloading spaCy model 'en_core_web_sm'...")
+        from spacy.cli import download
+        download("en_core_web_sm")
+        return spacy.load("en_core_web_sm")
 
 
 # ---------------------------------------------------------------------------

@@ -5,7 +5,8 @@
     "price": "$29.99",
     "features": "USB rechargeable, 6 stainless steel blades, BPA free, fits in cup holder",
     "niche": "kitchen gadgets",
-    "published": false
+    "published": true,
+    "published_at": "2026-07-03 17:12:06"
   },
   {
     "id": 2,

@@ -1,16 +1,8 @@
-"""
-product_finder.py — Autonomous Product Selector & AI Product Discovery Engine.
-
-Selects the next unpublished real product from product_catalog.json, or uses AI
-(NIM / Groq / Gemini) to dynamically discover high-converting viral Amazon products.
-"""
-
 import json
 import os
 import logging
 from datetime import datetime
 import config
-from script_generator import _call_llm
 
 logger = logging.getLogger(__name__)
 
@@ -66,6 +58,8 @@ def get_next_product() -> dict:
 def _discover_ai_product(existing_catalog: list[dict]) -> dict:
     """Uses LLM to discover a trending, real high-converting Amazon product."""
     import random
+    from script_generator import _try_groq, _try_nim, _try_gemini
+
     niche = random.choice(CATEGORIES)
     existing_names = [p.get("product", "") for p in existing_catalog]
 
@@ -80,19 +74,19 @@ Output ONLY valid JSON in exactly this format:
   "niche": "{niche}"
 }}"""
 
-    try:
-        raw_resp = _call_llm(prompt)
-        # Parse JSON from LLM response
-        start_idx = raw_resp.find("{")
-        end_idx = raw_resp.rfind("}") + 1
-        if start_idx != -1 and end_idx != -1:
-            data = json.loads(raw_resp[start_idx:end_idx])
-            data["published"] = True
-            data["published_at"] = datetime.now().strftime("%Y-%m-%d %H:%M:%S")
-            logger.info(f"[product_finder] AI discovered new product: '{data.get('product')}' ({data.get('price')})")
-            return data
-    except Exception as e:
-        logger.warning(f"[product_finder] AI product discovery fallback triggered: {e}")
+    for provider_fn in (_try_groq, _try_nim, _try_gemini):
+        try:
+            raw_resp = provider_fn(prompt)
+            start_idx = raw_resp.find("{")
+            end_idx = raw_resp.rfind("}") + 1
+            if start_idx != -1 and end_idx != -1:
+                data = json.loads(raw_resp[start_idx:end_idx])
+                data["published"] = True
+                data["published_at"] = datetime.now().strftime("%Y-%m-%d %H:%M:%S")
+                logger.info(f"[product_finder] AI discovered new product: '{data.get('product')}' ({data.get('price')})")
+                return data
+        except Exception as e:
+            logger.warning(f"[product_finder] Provider attempt failed: {e}")
 
     # Emergency Fallback
     return {

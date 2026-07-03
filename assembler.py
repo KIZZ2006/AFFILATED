@@ -313,12 +313,17 @@ def assemble_video(
         f"if(lt(t-{price_start:.3f},{price_fade_duration}),"
         f"(t-{price_start:.3f})/{price_fade_duration},1)"
     )
-    # Default Windows system font path escaped for FFmpeg filter
-    font_arg = "C\\:/Windows/Fonts/arial.ttf" if os.name == "nt" else "Arial"
+    # Default system font selection cross-platform (Windows & Linux)
+    if os.name == "nt":
+        font_filter_arg = "fontfile='C\\:/Windows/Fonts/arial.ttf'"
+    elif os.path.exists("/usr/share/fonts/truetype/dejavu/DejaVuSans-Bold.ttf"):
+        font_filter_arg = "fontfile='/usr/share/fonts/truetype/dejavu/DejaVuSans-Bold.ttf'"
+    else:
+        font_filter_arg = "font='Sans'"
 
     filter_parts.append(
         f"{subs_out}drawtext="
-        f"fontfile='{font_arg}':"
+        f"{font_filter_arg}:"
         f"text='{escaped_price}':"
         f"fontsize={price_font_size}:"
         f"fontcolor=white:"
