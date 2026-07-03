@@ -48,16 +48,18 @@ for _pkg, _folder in [("punkt", "tokenizers"), ("punkt_tab", "tokenizers"), ("st
 
 def load_spacy_nlp():
     """
-    Loads the 'en_core_web_sm' spaCy model.
-    Downloads it automatically if not found locally.
+    Loads the 'en_core_web_sm' spaCy model safely.
+    Tries direct package import first, then spacy.load fallback.
     """
     try:
-        return spacy.load("en_core_web_sm")
-    except OSError:
-        logger.info("Downloading spaCy model 'en_core_web_sm'...")
-        from spacy.cli import download
-        download("en_core_web_sm")
-        return spacy.load("en_core_web_sm")
+        import en_core_web_sm
+        return en_core_web_sm.load()
+    except Exception:
+        try:
+            return spacy.load("en_core_web_sm")
+        except Exception as e:
+            logger.warning(f"spaCy model 'en_core_web_sm' not available: {e}. Continuing with fallback cleaning.")
+            return None
 
 
 # ---------------------------------------------------------------------------
