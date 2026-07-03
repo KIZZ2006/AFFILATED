@@ -1,0 +1,26 @@
+# Environment & Secrets
+.env
+*.env
+client_secret.json
+token.json
+
+# Logs & Outputs
+*.log
+pipeline.log
+ngrok.log
+output/
+scratch/
+
+# Python Cache
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+.pytest_cache/
+.coverage
+
+# IDE / OS
+.vscode/
+.idea/
+.DS_Store
+Thumbs.db
