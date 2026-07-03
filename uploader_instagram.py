@@ -139,38 +139,35 @@ def _check_ig_graph_response(response: requests.Response, context: str) -> dict:
 
 def _upload_video_to_public_host(video_path: str) -> str:
     """
-    Upload the local MP4 to the configured PUBLIC_HOST_ENDPOINT.
-
-    Strategy A — multipart POST:
-      POST PUBLIC_HOST_ENDPOINT  with file= field.
-      Expects JSON response: {"url": "https://..."}.
-
-    Strategy B — PUT:
-      PUT PUBLIC_HOST_ENDPOINT/<filename>.
-      Assumes the server serves the file back at that same URL.
-
+    Upload the local MP4 to the configured PUBLIC_HOST_ENDPOINT or free public host (tmpfiles.org).
     Returns the public HTTPS URL of the hosted file.
     """
-    if not config.PUBLIC_HOST_ENDPOINT:
-        raise ValueError(
-            "[instagram] PUBLIC_HOST_ENDPOINT is not set in config/.env. "
-            "Instagram Graph API requires a public URL for the video. "
-            "Set this to an ngrok tunnel URL or your own public server."
-        )
-
-    endpoint = config.PUBLIC_HOST_ENDPOINT.rstrip("/")
+    endpoint = (config.PUBLIC_HOST_ENDPOINT or "").rstrip("/")
     filename = Path(video_path).name
     file_size_mb = os.path.getsize(video_path) / (1024 * 1024)
-    logger.info(
-        f"[instagram] Uploading {filename} ({file_size_mb:.1f} MB) to public host: {endpoint}"
-    )
 
-    # If using ngrok, the file is already being served locally, construct path relative to server root
-    if "ngrok" in endpoint:
+    # Strategy 1: Ngrok local tunnel (if running locally with active ngrok)
+    if endpoint and "ngrok" in endpoint:
         rel_path = os.path.relpath(video_path).replace("\\", "/")
         put_url = f"{endpoint}/{rel_path}"
         logger.info(f"[instagram] Ngrok detected. Public URL: {put_url}")
         return put_url
+
+    # Strategy 2: Automatic Free Cloud Host (tmpfiles.org) - ideal for GitHub Actions cloud runners
+    logger.info(f"[instagram] Uploading {filename} ({file_size_mb:.1f} MB) to free cloud host (tmpfiles.org)...")
+    try:
+        url = "https://tmpfiles.org/api/v1/upload"
+        with open(video_path, "rb") as fh:
+            resp = requests.post(url, files={"file": (filename, fh, "video/mp4")}, timeout=120)
+        if resp.ok:
+            data = resp.json()
+            page_url = data.get("data", {}).get("url", "")
+            if page_url:
+                direct_dl_url = page_url.replace("tmpfiles.org/", "tmpfiles.org/dl/")
+                logger.info(f"[instagram] tmpfiles.org upload succeeded. Direct URL: {direct_dl_url}")
+                return direct_dl_url
+    except Exception as e:
+        logger.warning(f"[instagram] tmpfiles.org upload failed: {e}. Trying custom endpoint if configured...")
 
     # Strategy A: multipart POST
     try:
