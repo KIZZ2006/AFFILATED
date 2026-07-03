@@ -187,22 +187,31 @@ def _try_gemini(prompt: str) -> str:
         raise ValueError("GEMINI_API_KEY not configured.")
 
     genai.configure(api_key=config.GEMINI_API_KEY)
-    model = genai.GenerativeModel(
-        model_name="gemini-1.5-flash",
-        system_instruction=_SYSTEM,
-        generation_config=genai.GenerationConfig(
-            temperature=0.72,
-            top_p=0.95,
-            max_output_tokens=160,
-        ),
-    )
+    
+    candidate_models = ["gemini-1.5-flash-latest", "gemini-1.5-flash", "gemini-2.0-flash", "gemini-pro"]
+    last_err = None
 
-    logger.info("[Gemini] Calling gemini-1.5-flash...")
-    resp = model.generate_content(prompt)
-    text = resp.text
-    if not text or not text.strip():
-        raise RuntimeError("[Gemini] Empty response.")
-    return _clean(text)
+    for m_name in candidate_models:
+        try:
+            logger.info(f"[Gemini] Trying model {m_name}...")
+            model = genai.GenerativeModel(
+                model_name=m_name,
+                system_instruction=_SYSTEM,
+                generation_config=genai.GenerationConfig(
+                    temperature=0.72,
+                    top_p=0.95,
+                    max_output_tokens=160,
+                ),
+            )
+            resp = model.generate_content(prompt)
+            text = resp.text
+            if text and text.strip():
+                return _clean(text)
+        except Exception as e:
+            logger.warning(f"[Gemini] Model {m_name} failed: {e}")
+            last_err = e
+
+    raise RuntimeError(f"[Gemini] All model candidates failed. Last error: {last_err}")
 
 
 # ---------------------------------------------------------------------------
