@@ -141,3 +141,5 @@ def _render_html(products: list[dict]) -> None:
 """
     with open(HTML_PATH, "w", encoding="utf-8") as f:
         f.write(html_content)
+    with open("output/index.html", "w", encoding="utf-8") as f:
+        f.write(html_content)
