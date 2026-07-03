@@ -26,20 +26,19 @@ import logging
 import subprocess
 import sys
 
-import spacy
-import nltk
-
-logger = logging.getLogger(__name__)
-
-# ---------------------------------------------------------------------------
-# NLTK data guard
-# ---------------------------------------------------------------------------
-
-for _pkg, _folder in [("punkt", "tokenizers"), ("punkt_tab", "tokenizers"), ("stopwords", "corpora")]:
-    try:
-        nltk.data.find(f"{_folder}/{_pkg}")
-    except LookupError:
-        nltk.download(_pkg, quiet=True)
+try:
+    import nltk
+    for _pkg, _folder in [("punkt", "tokenizers"), ("punkt_tab", "tokenizers"), ("stopwords", "corpora")]:
+        try:
+            nltk.data.find(f"{_folder}/{_pkg}")
+        except Exception:
+            try:
+                nltk.download(_pkg, quiet=True)
+            except Exception:
+                pass
+except Exception as _e:
+    logger.warning(f"NLTK optional import warning: {_e}")
+    nltk = None
 
 
 # ---------------------------------------------------------------------------
