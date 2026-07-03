@@ -26,6 +26,8 @@ import logging
 import subprocess
 import sys
 
+logger = logging.getLogger(__name__)
+
 try:
     import nltk
     for _pkg, _folder in [("punkt", "tokenizers"), ("punkt_tab", "tokenizers"), ("stopwords", "corpora")]:
