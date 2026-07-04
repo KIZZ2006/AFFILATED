@@ -20,9 +20,9 @@ on:
         required: true
         default: 'kitchen gadgets'
 
-  schedule:
-    # Runs daily at 09:00 AM UTC (2:30 PM IST)
-    - cron: '0 9 * * *'
+#  schedule:
+#    # Runs daily at 09:00 AM UTC (2:30 PM IST)
+#    - cron: '0 9 * * *'
 
 jobs:
   run-pipeline:
