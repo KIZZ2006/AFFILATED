@@ -7,8 +7,8 @@ openai-whisper>=20240930
 stable-ts>=2.19.0
 google-generativeai==0.7.2
 groq==0.9.0
-requests==2.31.0
-python-dotenv==1.0.0
+requests==2.33.0
+python-dotenv==1.2.2
 numpy==1.24.3
 nltk
 spacy>=3.7.0
