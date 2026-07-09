@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Yasna Store — Featured Deals</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;600;700;800&display=swap" rel="stylesheet">
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Outfit', sans-serif; }
+        body { background-color: #0b0f19; color: #f3f4f6; padding: 24px 16px; min-height: 100vh; display: flex; flex-direction: column; align-items: center; }
+        header { text-align: center; margin-bottom: 28px; width: 100%; max-width: 480px; }
+        .avatar { width: 88px; height: 88px; border-radius: 50%; border: 3px solid #6366f1; margin: 0 auto 12px; object-fit: cover; box-shadow: 0 0 20px rgba(99, 102, 241, 0.4); }
+        h1 { font-size: 24px; font-weight: 800; background: linear-gradient(135deg, #a5b4fc, #6366f1); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
+        p.sub { font-size: 14px; color: #9ca3af; margin-top: 4px; }
+        .grid { width: 100%; max-width: 480px; display: flex; flex-direction: column; gap: 18px; }
+        .card { background: #111827; border: 1px solid #1f2937; border-radius: 18px; padding: 20px; box-shadow: 0 10px 25px rgba(0,0,0,0.3); transition: transform 0.2s; position: relative; overflow: hidden; }
+        .card:hover { transform: translateY(-2px); border-color: #4f46e5; }
+        .product-img { width: 100%; height: 220px; object-fit: contain; background: #1f2937; border-radius: 12px; margin-bottom: 14px; border: 1px solid #374151; }
+        .badge { display: inline-block; padding: 4px 10px; background: rgba(99,102,241,0.15); color: #818cf8; font-size: 11px; font-weight: 700; text-transform: uppercase; border-radius: 20px; margin-bottom: 8px; letter-spacing: 0.5px; }
+        .title { font-size: 18px; font-weight: 700; color: #ffffff; margin-bottom: 4px; }
+        .price { font-size: 22px; font-weight: 800; color: #10b981; margin-bottom: 12px; }
+        .features { list-style: none; margin-bottom: 16px; font-size: 13px; color: #9ca3af; display: flex; flex-direction: column; gap: 4px; }
+        .buy-btn { display: block; width: 100%; text-align: center; background: linear-gradient(135deg, #10b981, #059669); color: #ffffff; text-decoration: none; font-weight: 700; font-size: 15px; padding: 14px; border-radius: 12px; box-shadow: 0 4px 14px rgba(16, 185, 129, 0.3); transition: opacity 0.2s; }
+        .buy-btn:hover { opacity: 0.9; }
+        footer { margin-top: 36px; text-align: center; font-size: 12px; color: #4b5563; }
+        .disclosure { font-size: 11px; color: #6b7280; text-align: center; margin: 12px auto; max-width: 480px; width: 100%; line-height: 1.4; padding: 0 8px; }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Yasna Store 🛍️</h1>
+        <p class="sub">Curated Deals & Viral Tech Finds</p>
+    </header>
+
+    <div class="disclosure">As an Amazon Associate I earn from qualifying purchases.</div>
+
+    <div class="grid">
+        
+        <div class="card">
+            <img src="assets/images/product_B0BDKWPBPL.jpg" class="product-img" alt="Apple Watch Series 7">
+            <div class="badge">fitness tech</div>
+            <h2 class="title">Apple Watch Series 7</h2>
+            <div class="price">$399.00</div>
+            <ul class="features"><li>✨ GPS tracking</li><li>✨ heart rate monitoring</li><li>✨ ECG monitoring</li></ul>
+            <a href="https://www.amazon.in/dp/B0BDKWPBPL/?tag=giftgaller036-21" target="_blank" rel="noopener noreferrer" class="buy-btn">
+                🛒 View Deal on Amazon &rarr;
+            </a>
+        </div>
+        
+        <div class="card">
+            
+            <div class="badge">kitchen appliances and gadgets</div>
+            <h2 class="title">Philips Daily Collection HD9200/90 Air Fryer</h2>
+            <div class="price">₹4999</div>
+            <ul class="features"><li>✨ rapid air technology</li><li>✨ 4.1 L capacity</li><li>✨ 1400W power</li></ul>
+            <a href="https://www.amazon.in/dp/B08XYWZ3P2/?tag=giftgaller036-21" target="_blank" rel="noopener noreferrer" class="buy-btn">
+                🛒 View Deal on Amazon &rarr;
+            </a>
+        </div>
+        
+        <div class="card">
+            <img src="assets/images/product_B0FL2458CF.jpg" class="product-img" alt="ECOVACS DEEBOT N30 Robot Vacuum Cleaner">
+            <div class="badge">home decor and furniture</div>
+            <h2 class="title">ECOVACS DEEBOT N30 Robot Vacuum Cleaner</h2>
+            <div class="price">₹20999</div>
+            <ul class="features"><li>✨ vacuum and mop in one-go</li><li>✨ 10000 Pa suction</li><li>✨ zero tangle technology</li></ul>
+            <a href="https://www.amazon.in/dp/B0FL2458CF/?tag=giftgaller036-21" target="_blank" rel="noopener noreferrer" class="buy-btn">
+                🛒 View Deal on Amazon &rarr;
+            </a>
+        </div>
+        
+        <div class="card">
+            
+            <div class="badge">kitchen appliances and gadgets</div>
+            <h2 class="title">Pigeon Healthifry Digital Air Fryer</h2>
+            <div class="price">₹2827</div>
+            <ul class="features"><li>✨ 4.2 L capacity</li><li>✨ 360° high-speed air circulation</li><li>✨ 85% less oil</li></ul>
+            <a href="https://www.amazon.in/dp/B0B8XNPQPN/?tag=giftgaller036-21" target="_blank" rel="noopener noreferrer" class="buy-btn">
+                🛒 View Deal on Amazon &rarr;
+            </a>
+        </div>
+        
+        <div class="card">
+            
+            <div class="badge">kitchen appliances and gadgets</div>
+            <h2 class="title">Go Hooked Kitchen 3-Tier Step Standing Spice Rack</h2>
+            <div class="price">₹484</div>
+            <ul class="features"><li>✨ powder coated iron sheet</li><li>✨ 3-step rack design</li><li>✨ tool-free organizer</li></ul>
+            <a href="https://www.amazon.in/dp/B0BYPGZQWB/?tag=giftgaller036-21" target="_blank" rel="noopener noreferrer" class="buy-btn">
+                🛒 View Deal on Amazon &rarr;
+            </a>
+        </div>
+        
+    </div>
+
+    <footer>
+        <div class="disclosure" style="margin-bottom: 12px; margin-top: 0;">As an Amazon Associate I earn from qualifying purchases.</div>
+        &copy; 2026 Yasna Store • Amazon Associate Storefront
+    </footer>
+</body>
+</html>

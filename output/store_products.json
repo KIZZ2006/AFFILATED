@@ -1,0 +1,71 @@
+[
+  {
+    "name": "Apple Watch Series 7",
+    "price": "$399.00",
+    "niche": "fitness tech",
+    "link": "https://www.amazon.in/dp/B0BDKWPBPL/?tag=giftgaller036-21",
+    "features": [
+      "GPS tracking",
+      "heart rate monitoring",
+      "ECG monitoring",
+      "water resistance",
+      "smart notifications"
+    ],
+    "image": "output\\assets\\images\\product_B0BDKWPBPL.jpg",
+    "updated_at": "2026-07-09 14:01"
+  },
+  {
+    "name": "Philips Daily Collection HD9200/90 Air Fryer",
+    "price": "₹4999",
+    "niche": "kitchen appliances and gadgets",
+    "link": "https://www.amazon.in/dp/B08XYWZ3P2/?tag=giftgaller036-21",
+    "features": [
+      "rapid air technology",
+      "4.1 L capacity",
+      "1400W power",
+      "auto-shut off"
+    ],
+    "image": null,
+    "updated_at": "2026-07-08 19:50"
+  },
+  {
+    "name": "ECOVACS DEEBOT N30 Robot Vacuum Cleaner",
+    "price": "₹20999",
+    "niche": "home decor and furniture",
+    "link": "https://www.amazon.in/dp/B0FL2458CF/?tag=giftgaller036-21",
+    "features": [
+      "vacuum and mop in one-go",
+      "10000 Pa suction",
+      "zero tangle technology",
+      "300 minutes runtime"
+    ],
+    "image": "output\\assets\\images\\product_B0FL2458CF.jpg",
+    "updated_at": "2026-07-08 19:58"
+  },
+  {
+    "name": "Pigeon Healthifry Digital Air Fryer",
+    "price": "₹2827",
+    "niche": "kitchen appliances and gadgets",
+    "link": "https://www.amazon.in/dp/B0B8XNPQPN/?tag=giftgaller036-21",
+    "features": [
+      "4.2 L capacity",
+      "360° high-speed air circulation",
+      "85% less oil",
+      "non-stick basket"
+    ],
+    "updated_at": "2026-07-05 15:26"
+  },
+  {
+    "name": "Go Hooked Kitchen 3-Tier Step Standing Spice Rack",
+    "price": "₹484",
+    "niche": "kitchen appliances and gadgets",
+    "link": "https://www.amazon.in/dp/B0BYPGZQWB/?tag=giftgaller036-21",
+    "features": [
+      "powder coated iron sheet",
+      "3-step rack design",
+      "tool-free organizer",
+      "space saving"
+    ],
+    "updated_at": "2026-07-05 15:24"
+  }
+]
