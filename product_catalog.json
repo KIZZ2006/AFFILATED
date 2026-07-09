@@ -1,12 +1,53 @@
 [
   {
+    "product": "Philips Daily Collection HD9200/90 Air Fryer",
+    "price": "₹4999",
+    "features": "rapid air technology, 4.1 L capacity, 1400W power, auto-shut off",
+    "niche": "kitchen appliances and gadgets",
+    "asin": "B08XYWZ3P2",
+    "status": "used",
+    "published_at": "2026-07-08 19:51:38"
+  },
+  {
+    "product": "Go Hooked Kitchen 3-Tier Step Standing Spice Rack",
+    "price": "₹484",
+    "features": "powder coated iron sheet, 3-step rack design, tool-free organizer, space saving",
+    "niche": "kitchen appliances and gadgets",
+    "asin": "B0BYPGZQWB",
+    "status": "used",
+    "published_at": "2026-07-05 15:26:08"
+  },
+  {
+    "product": "Pigeon Healthifry Digital Air Fryer",
+    "price": "₹2827",
+    "features": "4.2 L capacity, 360° high-speed air circulation, 85% less oil, non-stick basket",
+    "niche": "kitchen appliances and gadgets",
+    "asin": "B0B8XNPQPN",
+    "status": "used",
+    "published_at": "2026-07-05 15:28:13"
+  },
+  {
+    "product": "ECOVACS DEEBOT N30 Robot Vacuum Cleaner",
+    "price": "₹20999",
+    "features": "vacuum and mop in one-go, 10000 Pa suction, zero tangle technology, 300 minutes runtime",
+    "niche": "home decor and furniture",
+    "asin": "B0FL2458CF",
+    "status": "used",
+    "published_at": "2026-07-08 20:01:06"
+  },
+  {
     "id": 1,
     "product": "Portable Electric Blender",
     "price": "$29.99",
     "features": "USB rechargeable, 6 stainless steel blades, BPA free, fits in cup holder",
     "niche": "kitchen gadgets",
     "published": true,
-    "published_at": "2026-07-03 17:12:06"
+    "published_at": "2026-07-03 17:12:06",
+    "images": [
+      "https://images.unsplash.com/photo-1570222094114-d054a817e56b?w=800",
+      "https://images.unsplash.com/photo-1553530666-ba11a7da3888?w=800"
+    ],
+    "status": "used"
   },
   {
     "id": 2,
@@ -14,7 +55,13 @@
     "price": "$34.99",
     "features": "tailbone pain relief, breathable mesh cover, non-slip bottom, doctor recommended",
     "niche": "home office",
-    "published": false
+    "published": true,
+    "images": [
+      "https://images.unsplash.com/photo-1586023492125-27b2c045efd7?w=800",
+      "https://images.unsplash.com/photo-1580481072645-022f9a6d8310?w=800"
+    ],
+    "published_at": "2026-07-04 15:26:44",
+    "status": "used"
   },
   {
     "id": 3,
@@ -22,7 +69,13 @@
     "price": "$27.99",
     "features": "charges phone watch and earbuds, fast charging, compact travel design, LED indicator",
     "niche": "tech gadgets",
-    "published": false
+    "published": true,
+    "images": [
+      "https://images.unsplash.com/photo-1622445268141-cf4b1c073f81?w=800",
+      "https://images.unsplash.com/photo-1583394838336-acd977736f90?w=800"
+    ],
+    "published_at": "2026-07-05 13:39:17",
+    "status": "used"
   },
   {
     "id": 4,
@@ -30,7 +83,13 @@
     "price": "$49.99",
     "features": "6 speed levels, 4 head attachments, ultra-quiet motor, long battery life",
     "niche": "fitness tech",
-    "published": false
+    "published": true,
+    "images": [
+      "https://images.unsplash.com/photo-1544367567-0f2fcb009e0b?w=800",
+      "https://images.unsplash.com/photo-1518611012118-696072aa579a?w=800"
+    ],
+    "published_at": "2026-07-05 13:40:14",
+    "status": "used"
   },
   {
     "id": 5,
@@ -38,7 +97,13 @@
     "price": "$25.99",
     "features": "9000Pa suction, washable HEPA filter, lightweight portable, LED light",
     "niche": "car accessories",
-    "published": false
+    "published": true,
+    "images": [
+      "https://images.unsplash.com/photo-1558317374-067fb5f30001?w=800",
+      "https://images.unsplash.com/photo-1520340356584-f9917d1eea6f?w=800"
+    ],
+    "published_at": "2026-07-05 13:41:26",
+    "status": "used"
   },
   {
     "id": 6,
@@ -46,7 +111,13 @@
     "price": "$18.99",
     "features": "16 RGB colors, remote control, 180 degree rotation, romantic ambient lighting",
     "niche": "home decor",
-    "published": false
+    "published": true,
+    "images": [
+      "https://images.unsplash.com/photo-1507499739999-097706ad8914?w=800",
+      "https://images.unsplash.com/photo-1513506003901-1e6a229e2d15?w=800"
+    ],
+    "published_at": "2026-07-05 13:42:24",
+    "status": "used"
   },
   {
     "id": 7,
@@ -54,7 +125,13 @@
     "price": "$12.99",
     "features": "high-speed motor, stainless steel whisk, battery operated, easy clean",
     "niche": "kitchen gadgets",
-    "published": false
+    "published": true,
+    "images": [
+      "https://images.unsplash.com/photo-1517668808822-9e428d09322b?w=800",
+      "https://images.unsplash.com/photo-1514432324607-a09d9b4aefdd?w=800"
+    ],
+    "published_at": "2026-07-05 14:13:20",
+    "status": "used"
   },
   {
     "id": 8,
@@ -62,7 +139,13 @@
     "price": "$15.99",
     "features": "N52 super magnets, 360 degree rotation, one-hand operation, universal fit",
     "niche": "car accessories",
-    "published": false
+    "published": false,
+    "images": [
+      "https://images.unsplash.com/photo-1584438784894-089d6a62b8fa?w=800",
+      "https://images.unsplash.com/photo-1511707171634-5f897ff02aa9?w=800"
+    ],
+    "status": "used",
+    "published_at": "2026-07-05 14:44:34"
   },
   {
     "id": 9,
@@ -70,7 +153,13 @@
     "price": "$19.99",
     "features": "waterproof IPX7, 4 rotation massage heads, hair growth stimulation, rechargeable",
     "niche": "beauty and care",
-    "published": false
+    "published": false,
+    "images": [
+      "https://images.unsplash.com/photo-1522337360788-8b13dee7a37e?w=800",
+      "https://images.unsplash.com/photo-1560750588-73207b1ef5b8?w=800"
+    ],
+    "status": "used",
+    "published_at": "2026-07-05 14:59:35"
   },
   {
     "id": 10,
@@ -78,6 +167,925 @@
     "price": "$39.99",
     "features": "5 color modes, touch control, auto timer, USB charging port",
     "niche": "home office",
-    "published": false
+    "published": false,
+    "images": [
+      "https://images.unsplash.com/photo-1534073828943-f801091bb18c?w=800",
+      "https://images.unsplash.com/photo-1507473885765-e6ed057f782c?w=800"
+    ],
+    "status": "used",
+    "published_at": "2026-07-05 15:01:20"
+  },
+  {
+    "product": "Instant Pot Duo Plus",
+    "price": "$99.95",
+    "features": "7-in-1 multi-functional, pressure cooker, slow cooker, rice cooker, yogurt maker, sauté, and warmer",
+    "niche": "kitchen gadgets",
+    "status": "used",
+    "published_at": "2026-07-05 15:05:09"
+  },
+  {
+    "product": "Fitbit Charge 5",
+    "price": "$149.95",
+    "features": "heart rate monitoring, GPS tracking, sleep tracking, water resistance, guided breathing sessions",
+    "niche": "fitness tech",
+    "status": "used",
+    "published_at": "2026-07-05 15:06:40"
+  },
+  {
+    "product": "Foreo Luna 3",
+    "price": "$149.00",
+    "features": "facial cleansing, anti-aging, silicone brush, gentle exfoliation, various massage modes",
+    "niche": "beauty and personal care gadgets",
+    "status": "used",
+    "published_at": "2026-07-05 15:08:21"
+  },
+  {
+    "product": "GoWISE USA Air Fryer",
+    "price": "$69.99",
+    "features": "digital touchscreen, 8 cooking presets, 50 recipes, non-stick basket, cool-touch handle",
+    "niche": "kitchen gadgets",
+    "status": "used",
+    "published_at": "2026-07-05 15:10:32"
+  },
+  {
+    "product": "Garmin Vivosport",
+    "price": "$199.99",
+    "features": "GPS tracking, heart rate monitoring, stress tracking, VO2 max estimates, smart notifications",
+    "niche": "fitness tech",
+    "status": "used",
+    "published_at": "2026-07-05 15:12:44"
+  },
+  {
+    "product": "Philips Sonicare ProtectiveClean 4100",
+    "price": "$69.99",
+    "features": "plaque control, gum care, pressure sensor, timer, rechargeable battery",
+    "niche": "beauty and personal care gadgets",
+    "status": "used",
+    "published_at": "2026-07-08 19:48:31"
+  },
+  {
+    "product": "Breville Bambino Plus",
+    "price": "$499.95",
+    "features": "automatic temperature control, 15-bar pump, automatic steam wand, compact design",
+    "niche": "kitchen gadgets",
+    "status": "used",
+    "published_at": "2026-07-09 13:37:58"
+  },
+  {
+    "product": "Apple Watch Series 7",
+    "price": "$399.00",
+    "features": "GPS tracking, heart rate monitoring, ECG monitoring, water resistance, smart notifications",
+    "niche": "fitness tech",
+    "status": "used",
+    "asin": "B0BDKWPBPL",
+    "published_at": "2026-07-09 14:00:55"
+  },
+  {
+    "product": "Dyson Supersonic Hair Dryer",
+    "price": "$399.99",
+    "features": "fast drying, reduced heat damage, magnetic attachments, cool shot, multiple heat settings",
+    "niche": "beauty and personal care gadgets",
+    "status": "pending",
+    "asin": "B0DNZDZFFP"
+  },
+  {
+    "product": "Anker Instant Read Thermometer",
+    "price": "$8.99",
+    "features": "fast temperature reading, accurate results, waterproof, magnetic back, compact design",
+    "niche": "kitchen gadgets",
+    "status": "pending",
+    "asin": "B0BGX4RG9B"
+  },
+  {
+    "product": "Beats Powerbeats Pro 2",
+    "price": "$199.95",
+    "features": "wireless earbuds, long battery life, sweat-resistant, water-resistant, multiple ear tip sizes",
+    "niche": "fitness tech",
+    "status": "pending",
+    "asin": "B0GK22XD58"
+  },
+  {
+    "product": "Clarisonic Mia Smart",
+    "price": "$169.00",
+    "features": "facial cleansing, anti-aging, app connectivity, customizable routines, gentle exfoliation",
+    "niche": "beauty and personal care gadgets",
+    "status": "pending",
+    "asin": "B0BXHN3F3F"
+  },
+  {
+    "product": "KitchenAid Stand Mixer",
+    "price": "$299.99",
+    "features": "10 speeds, stainless steel bowl, multiple attachments, tilt-back head, non-slip base",
+    "niche": "kitchen gadgets",
+    "status": "pending",
+    "asin": "B096V98SH8"
+  },
+  {
+    "product": "Fitbit Inspire 2",
+    "price": "$99.95",
+    "features": "heart rate monitoring, sleep tracking, fitness tracking, guided breathing sessions, water resistance",
+    "niche": "fitness tech",
+    "status": "pending",
+    "asin": "B0F7XWCCY3"
+  },
+  {
+    "product": "Conair Infiniti Pro Spin Air Brush",
+    "price": "$49.99",
+    "features": "2-in-1 styling, hot air brush, ceramic coating, multiple heat settings, cool shot",
+    "niche": "beauty and personal care gadgets",
+    "status": "pending",
+    "asin": "B0DKFW7LRC"
+  },
+  {
+    "product": "Cuisinart Coffee Maker",
+    "price": "$99.95",
+    "features": "12-cup capacity, programmable timer, adjustable brew strength, built-in grinder, stainless steel",
+    "niche": "kitchen gadgets",
+    "status": "pending",
+    "asin": "B0922MDDWG"
+  },
+  {
+    "product": "Garmin Forerunner 945",
+    "price": "$649.99",
+    "features": "GPS tracking, heart rate monitoring, music storage, performance condition monitoring, smart notifications",
+    "niche": "fitness tech",
+    "status": "pending",
+    "asin": "B09BR252DC"
+  },
+  {
+    "product": "L'Oréal Paris Revitalift Derm Intensives",
+    "price": "$24.99",
+    "features": "anti-aging, hyaluronic acid, vitamin C, gentle exfoliation, nourishing formula",
+    "niche": "beauty and personal care gadgets",
+    "status": "pending",
+    "asin": "B0GC7G7QKY"
+  },
+  {
+    "product": "Hamilton Beach Slow Cooker",
+    "price": "$49.99",
+    "features": "6-quart capacity, programmable timer, multiple heat settings, lid clip, dishwasher-safe",
+    "niche": "kitchen gadgets",
+    "status": "pending",
+    "asin": "B07DKXNW2M"
+  },
+  {
+    "product": "Samsung Galaxy Watch4",
+    "price": "$249.99",
+    "features": "GPS tracking, heart rate monitoring, ECG monitoring, water resistance, smart notifications",
+    "niche": "fitness tech",
+    "status": "pending",
+    "asin": "B0F7XWCCY3"
+  },
+  {
+    "product": "Panasonic Nanoe Hair Dryer",
+    "price": "$149.99",
+    "features": "fast drying, reduced heat damage, nanoe technology, multiple heat settings, cool shot",
+    "niche": "beauty and personal care gadgets",
+    "status": "pending",
+    "asin": "B0DKFW7LRC"
+  },
+  {
+    "product": "Black+Decker Toaster Oven",
+    "price": "$49.99",
+    "features": "4-slice capacity, convection cooking, digital controls, compact design, dishwasher-safe",
+    "niche": "kitchen gadgets",
+    "status": "pending",
+    "asin": "B0D2Y3YB67"
+  },
+  {
+    "product": "Jabra Elite 7 Pro",
+    "price": "$149.99",
+    "features": "wireless earbuds, long battery life, sweat-resistant, water-resistant, multiple ear tip sizes",
+    "niche": "fitness tech",
+    "status": "pending",
+    "asin": "B0F1DGSZPZ"
+  },
+  {
+    "product": "Neutrogena Hydrating Facial Moisturizer",
+    "price": "$10.99",
+    "features": "hyaluronic acid, gentle formula, non-comedogenic, fragrance-free, oil-free",
+    "niche": "beauty and personal care gadgets",
+    "status": "pending",
+    "asin": "B0CRRTQJXR"
+  },
+  {
+    "product": "Braun Silk-épil epilator",
+    "price": "$99.99",
+    "features": "epilation, gentle exfoliation, soothing roller, multiple attachments, cordless design",
+    "niche": "beauty and personal care gadgets",
+    "status": "pending",
+    "asin": "B0C8QPCW9Y"
+  },
+  {
+    "product": "KitchenAid Immersion Blender",
+    "price": "$49.99",
+    "features": "variable speed control, stainless steel shaft, detachable head, non-slip grip, dishwasher-safe",
+    "niche": "kitchen gadgets",
+    "status": "pending",
+    "asin": "B07Y5HBH3D"
+  },
+  {
+    "product": "Fitbit Ace 3",
+    "price": "$79.95",
+    "features": "kid-friendly design, activity tracking, sleep tracking, water resistance, fun challenges",
+    "niche": "fitness tech",
+    "status": "pending",
+    "asin": "B0DG5F1SM5"
+  },
+  {
+    "product": "Remington Air Expert Styler",
+    "price": "$49.99",
+    "features": "hot air styling, multiple attachments, ceramic coating, cool shot, compact design",
+    "niche": "beauty and personal care gadgets",
+    "status": "pending",
+    "asin": "B071J3YJ73"
+  },
+  {
+    "product": "Cuisinart Food Processor",
+    "price": "$99.95",
+    "features": "7-cup capacity, stainless steel bowl, multiple attachments, adjustable slicing, reversible shredding",
+    "niche": "kitchen gadgets",
+    "status": "pending",
+    "asin": "B0DZ2XLPDD"
+  },
+  {
+    "product": "Garmin Index S2 Smart Scale",
+    "price": "$149.99",
+    "features": "weight tracking, body fat percentage, bone density, muscle mass, water percentage",
+    "niche": "fitness tech",
+    "status": "pending",
+    "asin": "B0CZX4FXB7"
+  },
+  {
+    "product": "Olay Regenerist Micro-Sculpting Cream",
+    "price": "$24.99",
+    "features": "anti-aging, hyaluronic acid, vitamin B3, Amino-Peptide Complex, fragrance-free",
+    "niche": "beauty and personal care gadgets",
+    "status": "pending",
+    "asin": "B0CW9L2J2H"
+  },
+  {
+    "product": "Anker PowerCore Fusion",
+    "price": "$25.99",
+    "features": "portable power bank, 5000mAh capacity, compact design, multiple USB ports, wall charger",
+    "niche": "kitchen gadgets",
+    "status": "pending",
+    "asin": "B0D5JKBJTQ"
+  },
+  {
+    "product": "Polar Vantage V2",
+    "price": "$499.95",
+    "features": "GPS tracking, heart rate monitoring, performance monitoring, running power, smart notifications",
+    "niche": "fitness tech",
+    "status": "pending",
+    "asin": "B0FM8J2JB6"
+  },
+  {
+    "product": "T3 Featherweight Luxe 2i Dryer",
+    "price": "$200.00",
+    "features": "fast drying, reduced heat damage, multiple heat settings, cool shot, lightweight design",
+    "niche": "beauty and personal care gadgets",
+    "status": "pending",
+    "asin": "B0DC68SDV7"
+  },
+  {
+    "product": "Breville Smart Oven",
+    "price": "$249.95",
+    "features": "11 cooking functions, smart algorithm, automatic temperature control, interior light, non-stick basket",
+    "niche": "kitchen gadgets",
+    "status": "pending",
+    "asin": "B0FGPTNQP2"
+  },
+  {
+    "product": "Jabra Elite 85t",
+    "price": "$149.99",
+    "features": "wireless earbuds, long battery life, sweat-resistant, water-resistant, multiple ear tip sizes",
+    "niche": "fitness tech",
+    "status": "pending",
+    "asin": "B0F1DGSZPZ"
+  },
+  {
+    "product": "L'Oréal Paris Pure-Clay Detox & Brighten Face Mask",
+    "price": "$12.99",
+    "features": "clay mask, charcoal, gentle exfoliation, brightening formula, non-comedogenic",
+    "niche": "beauty and personal care gadgets",
+    "status": "pending",
+    "asin": "B09HXRGX1L"
+  },
+  {
+    "product": "Anker Wireless Charging Pad",
+    "price": "$10.99",
+    "features": "fast charging, compact design, LED indicator, compatible with iPhone and Samsung",
+    "niche": "tech gadgets",
+    "status": "pending",
+    "asin": "B0DPQB4FNC"
+  },
+  {
+    "product": "Vanity Planet Exfoliating Brush",
+    "price": "$29.99",
+    "features": "exfoliating brush, gentle on skin, waterproof, rechargeable",
+    "niche": "beauty and personal care gadgets",
+    "status": "pending",
+    "asin": "B0BSYQJ56B"
+  },
+  {
+    "product": "Aukey Car Phone Mount",
+    "price": "$12.99",
+    "features": "adjustable arm, 360-degree rotation, universal compatibility, sturdy base",
+    "niche": "car accessories",
+    "status": "pending",
+    "asin": "B0CFL4SPTY"
+  },
+  {
+    "product": "Razer Mousepad",
+    "price": "$19.99",
+    "features": "slick surface, optimized for gaming, durable construction, large size",
+    "niche": "tech gadgets",
+    "status": "pending",
+    "asin": "B09TF6W76P"
+  },
+  {
+    "product": "L'Oreal Paris Makeup Brush Set",
+    "price": "$24.99",
+    "features": "12-piece set, synthetic bristles, ergonomic handles, travel case",
+    "niche": "beauty and personal care gadgets",
+    "status": "pending",
+    "asin": "B0C5RJMXJW"
+  },
+  {
+    "product": "EcoNour Car Vacuum Cleaner",
+    "price": "$25.99",
+    "features": "portable design, powerful suction, crevice tool, easy to empty",
+    "niche": "car accessories",
+    "status": "pending",
+    "asin": "B0FKTHKDDZ"
+  },
+  {
+    "product": "AmazonBasics Desk Lamp",
+    "price": "$25.99",
+    "features": "energy-efficient LED, adjustable arm, touch-sensitive control, modern design",
+    "niche": "tech and desk gadgets",
+    "status": "pending",
+    "asin": "B0GM8111XD"
+  },
+  {
+    "product": "Neutrogena Makeup Remover Wipes",
+    "price": "$8.99",
+    "features": "gentle on skin, effective at removing makeup, pre-moistened wipes, travel-friendly",
+    "niche": "beauty and personal care gadgets",
+    "status": "pending",
+    "asin": "B0822WTMKS"
+  },
+  {
+    "product": "Mpow Car Phone Charger",
+    "price": "$10.99",
+    "features": "dual USB ports, fast charging, compact design, LED indicator",
+    "niche": "car accessories",
+    "status": "pending",
+    "asin": "B0CV12C47D"
+  },
+  {
+    "product": "Logitech Wireless Keyboard",
+    "price": "$29.99",
+    "features": "compact design, long battery life, spill-resistant, quiet keys",
+    "niche": "tech gadgets",
+    "status": "pending",
+    "asin": "B07VPMTWMC"
+  },
+  {
+    "product": "Conair Hair Straightening Brush",
+    "price": "$29.99",
+    "features": "ceramic plates, multiple heat settings, automatic shut-off, ergonomic handle",
+    "niche": "beauty and personal care gadgets",
+    "status": "pending",
+    "asin": "B0DP2WZ23D"
+  },
+  {
+    "product": "Zone Tech Car Steering Wheel Cover",
+    "price": "$12.99",
+    "features": "universal fit, soft leather, easy to install, stylish design",
+    "niche": "car accessories",
+    "status": "pending",
+    "asin": "B0C2CYC516"
+  },
+  {
+    "product": "Anker PowerCore Portable Charger",
+    "price": "$25.99",
+    "features": "high-capacity battery, compact design, fast charging, LED indicator",
+    "niche": "tech gadgets",
+    "status": "pending",
+    "asin": "B0F1TWKRF6"
+  },
+  {
+    "product": "VicTsing Car Air Freshener",
+    "price": "$8.99",
+    "features": "long-lasting fragrance, easy to use, adjustable scent, compact design",
+    "niche": "car accessories",
+    "status": "pending",
+    "asin": "B0F8R32TJM"
+  },
+  {
+    "product": "Razer Gaming Mouse",
+    "price": "$49.99",
+    "features": "ergonomic design, 16,000 CPI optical sensor, customizable buttons, RGB lighting",
+    "niche": "tech gadgets",
+    "status": "pending",
+    "asin": "B07F2GC4S9"
+  },
+  {
+    "product": "Nioxin Scalp Treatment",
+    "price": "$29.99",
+    "features": "salon-quality treatment, gentle on scalp, effective at removing impurities, easy to use",
+    "niche": "beauty and personal care gadgets",
+    "status": "pending",
+    "asin": "B01LZTOHBF"
+  },
+  {
+    "product": "Ergostand Desk Converter",
+    "price": "$49.99",
+    "features": "adjustable height, sturdy base, large surface area, easy to assemble",
+    "niche": "tech and desk gadgets",
+    "status": "pending",
+    "asin": "B0F6CQ464C"
+  },
+  {
+    "product": "Maybelline Makeup Kit",
+    "price": "$24.99",
+    "features": "24-piece set, eyeshadows, lip gloss, mascara, travel case",
+    "niche": "beauty and personal care gadgets",
+    "status": "pending",
+    "asin": "B09448TYNF"
+  },
+  {
+    "product": "Autown Car Phone Holder",
+    "price": "$15.99",
+    "features": "adjustable arm, 360-degree rotation, universal compatibility, sturdy base",
+    "niche": "car accessories",
+    "status": "pending",
+    "asin": "B0DXCWSMBQ"
+  },
+  {
+    "product": "AmazonBasics Wireless Headphones",
+    "price": "$39.99",
+    "features": "long battery life, comfortable design, easy to pair, clear sound",
+    "niche": "tech gadgets",
+    "status": "pending",
+    "asin": "B0F62JBFBS"
+  },
+  {
+    "product": "Zone Tech Car Trunk Organizer",
+    "price": "$25.99",
+    "features": "durable construction, multiple compartments, easy to install, customizable",
+    "niche": "car accessories",
+    "status": "pending",
+    "asin": "B08GSNVFGV"
+  },
+  {
+    "product": "Conair Curling Iron",
+    "price": "$29.99",
+    "features": "multiple heat settings, ceramic barrel, automatic shut-off, ergonomic handle",
+    "niche": "beauty and personal care gadgets",
+    "status": "pending",
+    "asin": "B0DP2WZ23D"
+  },
+  {
+    "product": "Mophie Car Charger",
+    "price": "$19.99",
+    "features": "dual USB ports, fast charging, compact design, LED indicator",
+    "niche": "car accessories",
+    "status": "pending",
+    "asin": "B0CV12C47D"
+  },
+  {
+    "product": "Anker USB Hub",
+    "price": "$15.99",
+    "features": "4-port hub, compact design, easy to use, compatible with USB 3.0",
+    "niche": "tech and desk gadgets",
+    "status": "pending",
+    "asin": "B0DXJQT19B"
+  },
+  {
+    "product": "Revlon Hair Dryer",
+    "price": "$19.99",
+    "features": "multiple heat settings, cool shot button, ergonomic handle, lightweight design",
+    "niche": "beauty and personal care gadgets",
+    "status": "pending",
+    "asin": "B0BZ4WQLZV"
+  },
+  {
+    "product": "EcoNour Car Seat Cover",
+    "price": "$25.99",
+    "features": "universal fit, waterproof material, easy to install, breathable design",
+    "niche": "car accessories",
+    "status": "pending",
+    "asin": "B07Z3LF3JT"
+  },
+  {
+    "product": "Razer Keyboard",
+    "price": "$99.99",
+    "features": "mechanical keys, customizable backlighting, macro keys, ergonomic design",
+    "niche": "tech gadgets",
+    "status": "pending",
+    "asin": "B07TS6R1SF"
+  },
+  {
+    "product": "L'Oreal Paris Hair Mask",
+    "price": "$12.99",
+    "features": "deep conditioning treatment, hydrating properties, gentle on hair, easy to use",
+    "niche": "beauty and personal care gadgets",
+    "status": "pending",
+    "asin": "B0CX4FC9LD"
+  },
+  {
+    "product": "VicTsing Desk Lamp",
+    "price": "$29.99",
+    "features": "energy-efficient LED, adjustable arm, touch-sensitive control, modern design",
+    "niche": "tech and desk gadgets",
+    "status": "pending",
+    "asin": "B0GM8111XD"
+  },
+  {
+    "product": "Maybelline Eyeshadow Palette",
+    "price": "$14.99",
+    "features": "12-color palette, pigmented shades, creamy texture, travel-friendly",
+    "niche": "beauty and personal care gadgets",
+    "status": "pending",
+    "asin": "B01KQGZZY8"
+  },
+  {
+    "product": "Aukey Car Jump Starter",
+    "price": "$49.99",
+    "features": "portable design, powerful battery, LED light, compact size",
+    "niche": "car accessories",
+    "status": "pending",
+    "asin": "B0DXQ7ZMHV"
+  },
+  {
+    "product": "Neutrogena Skincare Set",
+    "price": "$29.99",
+    "features": "3-piece set, gentle on skin, effective at removing impurities, travel-friendly",
+    "niche": "beauty and personal care gadgets",
+    "status": "pending",
+    "asin": "B0C93R78HN"
+  },
+  {
+    "product": "Ergostand Monitor Mount",
+    "price": "$39.99",
+    "features": "adjustable height, sturdy base, large surface area, easy to assemble",
+    "niche": "tech and desk gadgets",
+    "status": "pending",
+    "asin": "B07Z7ZGHD5"
+  },
+  {
+    "product": "Conair Hair Clippers",
+    "price": "$24.99",
+    "features": "multiple length settings, ergonomic handle, adjustable blade, easy to use",
+    "niche": "beauty and personal care gadgets",
+    "status": "pending",
+    "asin": "B094JPRYYV"
+  },
+  {
+    "product": "Logitech Gaming Mousepad",
+    "price": "$19.99",
+    "features": "slick surface, optimized for gaming, durable construction, large size",
+    "niche": "tech gadgets",
+    "status": "pending",
+    "asin": "B08DNVDF52"
+  },
+  {
+    "product": "Olay Regenerist Serum",
+    "price": "$24.99",
+    "features": "anti-aging formula, hydrating properties, smooth texture, fragrance-free",
+    "niche": "beauty and personal care gadgets",
+    "status": "pending",
+    "asin": "B0D5D8S8G2"
+  },
+  {
+    "product": "Zone Tech Car Air Purifier",
+    "price": "$29.99",
+    "features": "portable design, effective at removing impurities, easy to use, compact size",
+    "niche": "car accessories",
+    "status": "pending",
+    "asin": "B071WBXFXQ"
+  },
+  {
+    "product": "Anker Soundcore Earbuds",
+    "price": "$29.99",
+    "features": "long battery life, comfortable design, easy to pair, clear sound",
+    "niche": "tech gadgets",
+    "status": "pending",
+    "asin": "B0F62JBFBS"
+  },
+  {
+    "product": "Real Techniques Makeup Sponges",
+    "price": "$9.99",
+    "features": "3-piece set, soft and gentle, easy to use, travel-friendly",
+    "niche": "beauty and personal care gadgets",
+    "status": "pending",
+    "asin": "B0DCK7P5X1"
+  },
+  {
+    "product": "Luminous LED String Lights",
+    "price": "$15.99",
+    "features": "waterproof, battery operated, 20ft long, 20 LED bulbs",
+    "niche": "home decor and ambient lighting",
+    "status": "pending",
+    "asin": "B0995SQSPT"
+  },
+  {
+    "product": "Ergonomic Office Chair",
+    "price": "$129.99",
+    "features": "adjustable height, lumbar support, breathable mesh, 360 degree swivel",
+    "niche": "home office accessories",
+    "status": "pending",
+    "asin": "B0DGV6JPQH"
+  },
+  {
+    "product": "Fitbit Inspire Fitness Tracker",
+    "price": "$69.95",
+    "features": "heart rate monitoring, sleep tracking, water resistant, guided breathing sessions",
+    "niche": "fitness tech",
+    "status": "pending",
+    "asin": "B0DG5F1SM5"
+  },
+  {
+    "product": "Aroma Essential Oil Diffuser",
+    "price": "$25.99",
+    "features": "ultrasonic mist, 7 color changing lights, auto shut off, 300ml water tank",
+    "niche": "home decor and ambient lighting",
+    "status": "pending",
+    "asin": "B07NL9QMP7"
+  },
+  {
+    "product": "Yoga Mat with Alignment Lines",
+    "price": "$29.99",
+    "features": "non slip surface, eco friendly, 72 inch long, 24 inch wide",
+    "niche": "fitness tech",
+    "status": "pending",
+    "asin": "B0BQRCLH2Z"
+  },
+  {
+    "product": "Smart Light Bulb",
+    "price": "$14.99",
+    "features": "color changing, schedule timer, energy efficient, compatible with Alexa",
+    "niche": "home decor and ambient lighting",
+    "status": "pending",
+    "asin": "B0BBMRZW5N"
+  },
+  {
+    "product": "Desk Calendar with Pen Holder",
+    "price": "$12.99",
+    "features": "large display, sturdy base, space for notes, calendar and to do list",
+    "niche": "home office accessories",
+    "status": "pending",
+    "asin": "B0CPPX3GVX"
+  },
+  {
+    "product": "Garmin Vivosport Fitness Tracker",
+    "price": "$99.99",
+    "features": "GPS tracking, heart rate monitoring, stress tracking, up to 7 days battery life",
+    "niche": "fitness tech",
+    "status": "pending",
+    "asin": "B0DG5F1SM5"
+  },
+  {
+    "product": "Faux Fur Throw Blanket",
+    "price": "$24.99",
+    "features": "soft and plush, 50 inch x 60 inch, machine washable, available in 5 colors",
+    "niche": "home decor and ambient lighting",
+    "status": "pending",
+    "asin": "B09BK9DWFJ"
+  },
+  {
+    "product": "Noise Cancelling Headphones",
+    "price": "$99.99",
+    "features": "wireless, long battery life, comfortable design, compatible with Bluetooth devices",
+    "niche": "home office accessories",
+    "status": "pending",
+    "asin": "B0DK979YJ7"
+  },
+  {
+    "product": "Resistance Bands Set",
+    "price": "$19.99",
+    "features": "5 different levels, durable latex, portable, comes with carrying case",
+    "niche": "fitness tech",
+    "status": "pending",
+    "asin": "B08H7XCSTS"
+  },
+  {
+    "product": "String Art Wall Decor",
+    "price": "$39.99",
+    "features": "unique design, handmade, 12 inch x 12 inch, comes with nails and hammer",
+    "niche": "home decor and ambient lighting",
+    "status": "pending",
+    "asin": "B0F4R58BWF"
+  },
+  {
+    "product": "Adjustable Desk Converter",
+    "price": "$49.99",
+    "features": "standing desk, ergonomic design, sturdy base, compatible with most desks",
+    "niche": "home office accessories",
+    "status": "pending",
+    "asin": "B0DL6B7ZDJ"
+  },
+  {
+    "product": "Fitness Tracker with Blood Oxygen Monitor",
+    "price": "$89.99",
+    "features": "heart rate monitoring, sleep tracking, GPS tracking, water resistant",
+    "niche": "fitness tech",
+    "status": "pending",
+    "asin": "B0DG5F1SM5"
+  },
+  {
+    "product": "Mason Jar Chandelier",
+    "price": "$59.99",
+    "features": "rustic design, 3 jar lights, adjustable chain, easy to install",
+    "niche": "home decor and ambient lighting",
+    "status": "pending",
+    "asin": "B0GN9SWD4W"
+  },
+  {
+    "product": "Wireless Keyboard and Mouse Combo",
+    "price": "$29.99",
+    "features": "compact design, long battery life, compatible with Windows and Mac",
+    "niche": "home office accessories",
+    "status": "pending",
+    "asin": "B0F1TP9F4Q"
+  },
+  {
+    "product": "Yoga Blocks and Strap Set",
+    "price": "$14.99",
+    "features": "high quality foam, durable strap, perfect for beginners, comes with carrying case",
+    "niche": "fitness tech",
+    "status": "pending",
+    "asin": "B0CJJQWL45"
+  },
+  {
+    "product": "Himalayan Salt Lamp",
+    "price": "$34.99",
+    "features": "natural air purifier, unique design, 6 inch tall, comes with dimmer switch",
+    "niche": "home decor and ambient lighting",
+    "status": "pending",
+    "asin": "B0DYYGP57D"
+  },
+  {
+    "product": "Paper Shredder with CD Shredding",
+    "price": "$49.99",
+    "features": "high security, 10 sheet capacity, quiet operation, compact design",
+    "niche": "home office accessories",
+    "status": "pending",
+    "asin": "B0714LVQSJ"
+  },
+  {
+    "product": "Smart Jump Rope with Fitness Tracker",
+    "price": "$29.99",
+    "features": "counts jumps, tracks calories, adjustable length, water resistant",
+    "niche": "fitness tech",
+    "status": "pending",
+    "asin": "B091PXCDX2"
+  },
+  {
+    "product": "Fairy Lights with Remote Control",
+    "price": "$19.99",
+    "features": "20ft long, 20 LED bulbs, battery operated, comes with remote control",
+    "niche": "home decor and ambient lighting",
+    "status": "pending",
+    "asin": "B0BX6YN2BQ"
+  },
+  {
+    "product": "Standing Desk Mat with Massage",
+    "price": "$39.99",
+    "features": "thick and durable, massage nodes, anti fatigue, comes with carrying case",
+    "niche": "home office accessories",
+    "status": "pending",
+    "asin": "B08XZQBQPL"
+  },
+  {
+    "product": "Fitness Tracker with built in GPS",
+    "price": "$99.99",
+    "features": "heart rate monitoring, sleep tracking, water resistant, compatible with iOS and Android",
+    "niche": "fitness tech",
+    "status": "pending",
+    "asin": "B0DG5F1SM5"
+  },
+  {
+    "product": "Geometric Planter Set",
+    "price": "$29.99",
+    "features": "set of 3, unique design, made of ceramic, perfect for succulents",
+    "niche": "home decor and ambient lighting",
+    "status": "pending",
+    "asin": "B0B553ND6C"
+  },
+  {
+    "product": "Laser Printer with Scanner and Copier",
+    "price": "$149.99",
+    "features": "high quality printing, fast scanning, compact design, compatible with Windows and Mac",
+    "niche": "home office accessories",
+    "status": "pending",
+    "asin": "B0FMDR55YX"
+  },
+  {
+    "product": "Ab Roller Wheel with Resistance Bands",
+    "price": "$24.99",
+    "features": "durable construction, adjustable resistance, comes with carrying case, perfect for core workout",
+    "niche": "fitness tech",
+    "status": "pending",
+    "asin": "B08L7G5GG5"
+  },
+  {
+    "product": "Candle Set with Essential Oils",
+    "price": "$39.99",
+    "features": "set of 6, unique scents, made of soy wax, comes with gift box",
+    "niche": "home decor and ambient lighting",
+    "status": "pending",
+    "asin": "B07NL9QMP7"
+  },
+  {
+    "product": "Ergonomic Mouse with Vertical Design",
+    "price": "$29.99",
+    "features": "reduces strain, comfortable design, compatible with Windows and Mac, comes with carrying case",
+    "niche": "home office accessories",
+    "status": "pending",
+    "asin": "B0D4LYF1QP"
+  },
+  {
+    "product": "Smart Scale with Body Fat Analysis",
+    "price": "$49.99",
+    "features": "high accuracy, tracks progress, compatible with iOS and Android, comes with carrying case",
+    "niche": "fitness tech",
+    "status": "pending",
+    "asin": "B0867ZRT5B"
+  },
+  {
+    "product": "Macrame Plant Hanger",
+    "price": "$24.99",
+    "features": "unique design, handmade, adjustable length, comes with plant pot",
+    "niche": "home decor and ambient lighting",
+    "status": "pending",
+    "asin": "B07JDT2C53"
+  },
+  {
+    "product": "High Intensity Interval Training Timer",
+    "price": "$19.99",
+    "features": "large display, easy to use, adjustable intervals, comes with carrying case",
+    "niche": "fitness tech",
+    "status": "pending",
+    "asin": "B0GZKM4B45"
+  },
+  {
+    "product": "Faux Leather Desk Pad",
+    "price": "$14.99",
+    "features": "large surface, durable construction, water resistant, comes with pen holder",
+    "niche": "home office accessories",
+    "status": "pending",
+    "asin": "B0C2CC2FYR"
+  },
+  {
+    "product": "Recovery Sandals with Arch Support",
+    "price": "$39.99",
+    "features": "comfortable design, adjustable straps, comes with carrying case, perfect for post workout",
+    "niche": "fitness tech",
+    "status": "pending",
+    "asin": "B0D39YGP2K"
+  },
+  {
+    "product": "Aromatherapy Diffuser Necklace",
+    "price": "$19.99",
+    "features": "unique design, portable, comes with essential oils, perfect for on the go",
+    "niche": "home decor and ambient lighting",
+    "status": "pending",
+    "asin": "B0H7LSK59Y"
+  },
+  {
+    "product": "Hanging Geometric Shelf",
+    "price": "$49.99",
+    "features": "unique design, made of wood, adjustable length, comes with installation kit",
+    "niche": "home decor and ambient lighting",
+    "status": "pending",
+    "asin": "B0BJDCJBSQ"
+  },
+  {
+    "product": "Document Scanner with Wi-Fi Connectivity",
+    "price": "$99.99",
+    "features": "high quality scanning, compact design, compatible with Windows and Mac, comes with carrying case",
+    "niche": "home office accessories",
+    "status": "pending",
+    "asin": "B09N3LHV2X"
+  },
+  {
+    "product": "Fairy String Lights with Solar Panel",
+    "price": "$29.99",
+    "features": "waterproof, 20ft long, 20 LED bulbs, comes with solar panel and stake",
+    "niche": "home decor and ambient lighting",
+    "status": "pending",
+    "asin": "B0995SQSPT"
+  },
+  {
+    "product": "Ergonomic Footrest with Massage",
+    "price": "$39.99",
+    "features": "adjustable height, comfortable design, comes with carrying case, perfect for office use",
+    "niche": "home office accessories",
+    "status": "pending",
+    "asin": "B0C1XJR77K"
   }
 ]

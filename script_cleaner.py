@@ -43,24 +43,6 @@ except Exception as _e:
     nltk = None
 
 
-# ---------------------------------------------------------------------------
-# spaCy loader (kept for NER / future use — not used for sentence splitting)
-# ---------------------------------------------------------------------------
-
-def load_spacy_nlp():
-    """
-    Loads the 'en_core_web_sm' spaCy model safely.
-    Tries direct package import first, then spacy.load fallback.
-    """
-    try:
-        import en_core_web_sm
-        return en_core_web_sm.load()
-    except Exception:
-        try:
-            return spacy.load("en_core_web_sm")
-        except Exception as e:
-            logger.warning(f"spaCy model 'en_core_web_sm' not available: {e}. Continuing with fallback cleaning.")
-            return None
 
 
 # ---------------------------------------------------------------------------
@@ -86,11 +68,27 @@ FILLER_OPENERS = [
 # Core splitting logic — phrase-aware, not word-chopping
 # ---------------------------------------------------------------------------
 
+_SPACY_NLP = None
+
+def load_spacy_nlp():
+    """Lazy loads spaCy's en_core_web_sm model for robust sentence boundary detection."""
+    global _SPACY_NLP
+    if _SPACY_NLP is None:
+        try:
+            import spacy
+            _SPACY_NLP = spacy.load("en_core_web_sm")
+            logger.info("[cleaner] Successfully loaded spaCy NLP pipeline (en_core_web_sm).")
+        except Exception as e:
+            logger.warning(f"[cleaner] Could not load spaCy model: {e}. Falling back to regex/NLTK.")
+            _SPACY_NLP = False
+    return _SPACY_NLP if _SPACY_NLP else None
+
+
 # Pause markers the prompt instructs the LLM to use
 _ELLIPSIS_RE = re.compile(r'\s*\.\.\.\s*')
 _EMDASH_RE   = re.compile(r'\s*—\s*')
-# Terminal sentence end followed by a capital letter or end of string
-_SENTENCE_END_RE = re.compile(r'(?<=[.!?])\s+(?=[A-Z\'"])')
+# Terminal sentence end followed by a capital letter or quote, ensuring decimals (e.g. 49.99) are protected
+_SENTENCE_END_RE = re.compile(r'(?<!\d)(?<=[.!?])\s+(?=[A-Z\'"])')
 
 
 def _split_into_phrases(text: str) -> list[str]:
@@ -100,7 +98,7 @@ def _split_into_phrases(text: str) -> list[str]:
     Priority order:
       1. Ellipsis   (...) → hard split, long pause in voiceover
       2. Em dash    (—)   → hard split, emphasis pause in voiceover
-      3. Sentence end (. ! ?) followed by capital → split only if both halves ≥ 5 words
+      3. Sentence end (. ! ?) via spaCy (or regex fallback)
 
     Returns a list of phrase strings, cleaned of leading/trailing whitespace.
     """
@@ -119,10 +117,21 @@ def _split_into_phrases(text: str) -> list[str]:
             if sub:
                 parts_after_emdash.append(sub)
 
-    # Step 3: within each part, split on terminal punctuation only when
-    #         both resulting halves are long enough to be meaningful phrases
+    # Step 3: within each part, split on terminal punctuation using spaCy if available
+    nlp = load_spacy_nlp()
     final_phrases: list[str] = []
+
     for segment in parts_after_emdash:
+        if nlp:
+            try:
+                doc = nlp(segment)
+                spans = [sent.text.strip() for sent in doc.sents if sent.text.strip()]
+                final_phrases.extend(spans)
+                continue
+            except Exception as e:
+                logger.warning(f"[cleaner] spaCy sentence splitting failed: {e}. Using regex fallback.")
+
+        # Fallback to protected regex split
         terminal_splits = _SENTENCE_END_RE.split(segment)
         for phrase in terminal_splits:
             phrase = phrase.strip()

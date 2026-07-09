@@ -3,6 +3,8 @@
 *.env
 client_secret.json
 token.json
+script_history.db
+
 
 # Logs & Outputs
 *.log
@@ -10,6 +12,11 @@ pipeline.log
 ngrok.log
 output/
 scratch/
+
+# Generated/local data files
+used_scripts.json
+content_log.json
+assets/music/
 
 # Python Cache
 __pycache__/

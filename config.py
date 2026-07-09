@@ -19,15 +19,19 @@ GROQ_API_KEY = os.getenv("GROQ_API_KEY", "")
 # Google Gemini — fallback 2: generous quota, reliable
 GEMINI_API_KEY = os.getenv("GEMINI_API_KEY", "")
 
-# YouTube API Credentials and Token Paths
-YT_CLIENT_SECRET_PATH = os.getenv("YT_CLIENT_SECRET_PATH", "client_secret.json")
-YT_TOKEN_PATH = os.getenv("YT_TOKEN_PATH", "token.json")
+# YouTube API Credentials and Token Paths (unused — manual upload workflow)
+# YT_CLIENT_SECRET_PATH = os.getenv("YT_CLIENT_SECRET_PATH", "client_secret.json")
+# YT_TOKEN_PATH = os.getenv("YT_TOKEN_PATH", "token.json")
 
-# Instagram / Meta Graph API Credentials
-IG_ACCESS_TOKEN = os.getenv("IG_ACCESS_TOKEN", "")
-IG_USER_ID = os.getenv("IG_USER_ID", "")
-IG_TOKEN_ISSUED_DATE = os.getenv("IG_TOKEN_ISSUED_DATE", "")
-PUBLIC_HOST_ENDPOINT = os.getenv("PUBLIC_HOST_ENDPOINT", "")
+# Public host / ngrok endpoint for storefront and webhook callbacks
+PUBLIC_HOST_ENDPOINT = os.getenv("PUBLIC_HOST_ENDPOINT", "http://localhost:5000")
+
+# Amazon Associates tag — read exclusively through amazon_affiliate.py via this config
+AMAZON_ASSOCIATE_ID = os.getenv("AMAZON_ASSOCIATE_ID", "")
+# Telegram Bot API Credentials & Auto-Publish Control
+TELEGRAM_BOT_TOKEN = os.getenv("TELEGRAM_BOT_TOKEN", "")
+TELEGRAM_CHAT_ID = os.getenv("TELEGRAM_CHAT_ID", "")
+AUTO_PUBLISH_ENABLED = os.getenv("AUTO_PUBLISH_ENABLED", "false").lower() == "true"
 
 # Video Assembly Tunables
 VIDEO_WIDTH = int(os.getenv("VIDEO_WIDTH", "1080"))
@@ -36,16 +40,14 @@ TARGET_VOICEOVER_DURATION = float(os.getenv("TARGET_VOICEOVER_DURATION", "27.5")
 
 # Subtitle / Caption Style Settings (for ASS Substation Alpha files)
 CAPTION_FONT = os.getenv("CAPTION_FONT", "Arial")
-CAPTION_FONT_SIZE = int(os.getenv("CAPTION_FONT_SIZE", "34"))
+CAPTION_FONT_SIZE = int(os.getenv("CAPTION_FONT_SIZE", "52"))
 CAPTION_PRIMARY_COLOR = os.getenv("CAPTION_PRIMARY_COLOR", "&H00ffffff")  # White (BGR/ABGR hex format)
 CAPTION_OUTLINE_COLOR = os.getenv("CAPTION_OUTLINE_COLOR", "&H00000000")  # Black
-CAPTION_OUTLINE_WIDTH = int(os.getenv("CAPTION_OUTLINE_WIDTH", "3"))
-CAPTION_SHADOW = int(os.getenv("CAPTION_SHADOW", "1"))
+CAPTION_OUTLINE_WIDTH = int(os.getenv("CAPTION_OUTLINE_WIDTH", "4"))
+CAPTION_SHADOW = int(os.getenv("CAPTION_SHADOW", "2"))
 CAPTION_ALIGNMENT = int(os.getenv("CAPTION_ALIGNMENT", "5"))  # 5 is middle center
-CAPTION_MARGIN_V = int(os.getenv("CAPTION_MARGIN_V", "0"))  # Centered vertically
+CAPTION_MARGIN_V = int(os.getenv("CAPTION_MARGIN_V", "0"))  # Centered vertically in middle third
 
-# Linktree / Bio Link
-LINKTREE_URL = os.getenv("LINKTREE_URL", "https://linktr.ee/yasna_store0808")
 
 def validate_config():
     """

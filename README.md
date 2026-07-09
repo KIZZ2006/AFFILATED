@@ -1,6 +1,6 @@
 # Yasna Content Pipeline
 
-An automated short-form affiliate video creation and multi-platform publishing pipeline. Given a product name, price, features, and niche, Yasna automatically generates engaging copy, synthesizes natural voiceover, extracts word-level subtitles, gathers matching portrait visuals, and facilitates automated publishing.
+An autonomous short-form affiliate video creation and multi-platform publishing engine. Given a product name, price, features, and niche, Yasna automatically generates direct-response marketing scripts, checks hook uniqueness via SQLite, synthesizes natural voiceovers, burns high-impact center word-burst captions, applies Ken Burns zoom effects to real product images, and queues videos for automated publishing to Instagram Reels and YouTube Shorts.
 
 ---
 
@@ -8,75 +8,87 @@ An automated short-form affiliate video creation and multi-platform publishing p
 
 ```mermaid
 graph TD
-    A[CLI Input] --> B[Script Generator: NVIDIA NIM]
-    B --> C[Script Cleaner: spaCy]
-    C --> D[Voiceover: Supertonic TTS]
-    D --> E[Captioner: stable-ts]
-    D --> F[Visuals: Pexels API]
-    E --> G[Assembler: FFmpeg - STUB]
-    F --> G
-    G --> H[Publisher: YouTube Shorts]
-    G --> I[Publisher: Instagram Reels - STUB]
+    A[CLI / Product Finder] --> B[Script Generator: NIM / Groq / Gemini]
+    B -->|Hook Check| C[Script History SQLite]
+    B --> D[Script Cleaner: Phrase Segmentation]
+    D --> E[Voiceover: Supertonic TTS]
+    E --> F[Captioner: stable-ts Word-Bursts]
+    A --> G[Visual Sourcing: Product Images + Pexels B-Roll]
+    F --> H[Assembler: FFmpeg Ken Burns & Burn-in]
+    G --> H
+    H --> I[queue.json]
+    I --> J[publish_next.py Runner]
+    J --> K[Meta Graph API Resumable Upload - Instagram]
+    J --> L[YouTube Data API v3 - YouTube Shorts]
 ```
 
 ### 1. Key Modules & Pipeline Flow
-1. **`config.py`**: Reads all keys, secrets, paths, and aesthetic settings from `.env`.
-2. **`script_generator.py`**: Connects to the NVIDIA NIM API (OpenAI-compatible chat completions) to generate short vertical-focused ad copywriting. Uses a custom direct-response marketing prompt and exponential backoff retry logic.
-3. **`script_cleaner.py`**: Employs spaCy (`en_core_web_sm`) to segment the script into distinct sentences, strips conversational LLM fluff, and splits sentences exceeding 12 words to maintain a rapid visual pace.
-4. **`voiceover.py`**: Integrates the `supertonic` ONNX local engine to generate a WAV file, merging synthesized sentence segments with 0.3s pauses.
-5. **`captioner.py`**: Invokes `stable-ts` (Whisper) to transcribe the audio, extracting word-level timestamps and exporting an Advanced SubStation Alpha (`.ass`) caption file styled for a 1080x1920 viewport.
-6. **`visuals.py`**: Connects to the Pexels Video Search API to locate and download vertical (portrait-oriented) stock footage based on niche terms, with a built-in generic fallback mechanism.
-7. **`assembler.py` (STUB)**: Formulates the specifications for merging video clips, burning in `.ass` captions, overlays, and final trimming.
-8. **`uploader_youtube.py`**: Connects to YouTube Data API v3 to publish the video as a YouTube Short. Handles automated session token refreshment.
-9. **`uploader_instagram.py` (STUB)**: Outlines the Graph API container upload flow.
-10. **`main.py`**: Command-line entrypoint that coordinates the entire workflow sequentially.
+1. **`config.py`**: Centralized configuration reading keys, credentials, and render settings from `.env`.
+2. **`script_generator.py`**: Multi-provider LLM chain (Groq → NIM → Gemini) writing 30-second direct-response ad copy with DM/bio CTA.
+3. **`script_history.py`**: SQLite database (`script_history.db`) tracking hook similarity to prevent duplicate content angles across runs.
+4. **`script_cleaner.py`**: Cleans and segments scripts into breath-phrases for TTS.
+5. **`voiceover.py`**: Synthesizes local audio using `supertonic` ONNX engine.
+6. **`captioner.py`**: Uses `stable-ts` (Whisper) to export single/two-word burst captions aligned in the middle-center third of the screen.
+7. **`visuals.py`**: Downloads real product images (Amazon CDN) as primary visuals, and queries Pexels Video API for secondary B-roll cutaways.
+8. **`assembler.py`**: Full FFmpeg video assembly combining Ken Burns zoompan filters on product images, B-roll clips, voiceover audio, ASS captions, and final price-banner overlay.
+9. **`amazon_affiliate.py` & `storefront.py`**: Translates products into affiliate tracking links and updates a hosted HTML storefront page (`store.html`).
+10. **`main.py`**: Local generation entrypoint. Builds the complete video and appends metadata to `queue.json` without publishing directly.
+11. **`uploader_instagram.py`**: Meta Graph API publisher using resumable binary video uploads to `rupload.facebook.com`.
+12. **`uploader_youtube.py`**: YouTube Data API v3 publisher with automated OAuth token refresh.
+13. **`publish_next.py`**: Publishing runner. Reads `queue.json`, publishes the oldest pending video to Instagram and YouTube, then deletes the local video MP4 from disk.
+14. **`.github/workflows/publish_queue.yml`**: GitHub Actions workflow running `publish_next.py` twice daily via cron schedule or manual dispatch.
+15. **`webhook_listener.py`**: Standalone Flask application for real-time Instagram comment-to-DM automation. Listens for webhooks and sends Private Replies using the Meta Graph API when trigger keywords are matched.
 
 ---
 
-## 📝 Documented Assumptions
+## 📡 Webhook Listener (Comment-to-DM Automation)
 
-1. **NVIDIA NIM Endpoint**: Assumes the OpenAI-compatible endpoint URL `https://integrate.api.nvidia.com/v1`.
-2. **Audio Sample Rate**: Assumes `supertonic` synthesizes audio at `44100Hz` for padding calculations.
-3. **Pexels Orientation**: Filters strictly for `orientation: portrait` to match standard mobile formats.
-4. **YouTube Session**: Assumes the user has registered their application in the Google Developer Console, placed the `client_secret.json` at the configured path, and performed the initial login token generation to output `token.json`.
-5. **Stubs**: In Stage 1, `assembler.py` and `uploader_instagram.py` will raise a `NotImplementedError` if run. `main.py` catches this gracefully and completes the run up to the stub point.
+The `webhook_listener.py` module is a separate, always-on service designed to respond to Instagram comments in real-time. It is **not** run by GitHub Actions.
+
+### Deployment & Setup
+1. Deploy `webhook_listener.py` to an always-on host like **Render**, **Railway**, or **Heroku**.
+2. Configure the environment variables (`IG_ACCESS_TOKEN`, `IG_USER_ID`, and `WEBHOOK_VERIFY_TOKEN`) in your host's dashboard.
+3. Once deployed, take your public application URL (e.g., `https://your-app.onrender.com/webhook`) and register it in the **Meta App Dashboard**:
+   - Go to Webhooks -> Instagram.
+   - Subscribe to the `comments` field.
+   - Provide your chosen `WEBHOOK_VERIFY_TOKEN` to complete the verification handshake.
 
 ---
 
 ## 🚀 Setup & Installation
 
 ### 1. Prerequisites
-- **Python**: Version 3.10 or 3.11 recommended.
-- **FFmpeg**: Required on the system PATH for audio synthesis, Whisper transcription, and caption generation.
+- **Python**: 3.10 or 3.11 recommended.
+- **FFmpeg**: Must be available on system PATH.
 
 ### 2. Installation Steps
-1. Create and activate a virtual environment:
+1. Create and activate virtual environment:
    ```bash
    python -m venv venv
-   # On Windows:
+   # Windows:
    venv\Scripts\activate
    ```
 2. Install dependencies:
    ```bash
    pip install -r requirements.txt
    ```
-3. Initialize the spaCy language model (the cleaner will also download this automatically if missing):
-   ```bash
-   python -m spacy download en_core_web_sm
-   ```
 
 ### 3. Environment Configuration
-Copy `.env.example` to `.env` and fill in your details:
+Copy `.env.example` to `.env` and fill in your keys:
 ```bash
 cp .env.example .env
 ```
-Ensure `NIM_API_KEY` and `PEXELS_API_KEY` are provided.
 
 ---
 
-## 💻 Example Command
+## 💻 Usage
 
-To execute a local pipeline test (without attempting uploads):
+### Generate a Video (Local Queue Creation)
+To generate a video ad and add it to `queue.json`:
+```bash
+python main.py
+```
+Or specify a custom product:
 ```bash
 python main.py \
   --product "Smart Kitchen Pepper Grinder" \
@@ -85,13 +97,8 @@ python main.py \
   --niche "kitchen gadgets"
 ```
 
-To execute and trigger a YouTube Shorts publish attempt:
+### Publish Next Queued Video
+To process and publish the oldest queued video:
 ```bash
-python main.py \
-  --product "Smart Kitchen Pepper Grinder" \
-  --price "$24.99" \
-  --features "one-touch button, USB rechargeable, adjustable coarseness" \
-  --niche "kitchen gadgets" \
-  --publish youtube
+python publish_next.py
 ```
-*(Note: Uploading requires a valid `token.json` file generated for your YouTube account.)*

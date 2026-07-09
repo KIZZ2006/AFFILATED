@@ -17,13 +17,17 @@ logger = logging.getLogger(__name__)
 DB_PATH = "output/store_products.json"
 HTML_PATH = "output/store.html"
 
+AMAZON_DISCLOSURE_TEXT = "As an Amazon Associate I earn from qualifying purchases."
+
+
 
 def register_product(
     product_name: str,
     price: str,
     niche: str,
     affiliate_link: str,
-    features: list[str] | None = None
+    features: list[str] | None = None,
+    image_path: str | None = None
 ) -> str:
     """
     Registers a product in the automated storefront catalog and rebuilds the live HTML page.
@@ -34,6 +38,7 @@ def register_product(
         niche: Product niche category
         affiliate_link: Tracked Amazon affiliate URL
         features: Optional list of product key features
+        image_path: Optional local path to the product image
 
     Returns:
         str: Live public URL of the automated storefront.
@@ -57,6 +62,7 @@ def register_product(
         "niche": niche,
         "link": affiliate_link,
         "features": features or [],
+        "image": image_path,
         "updated_at": datetime.now().strftime("%Y-%m-%d %H:%M")
     }
 
@@ -73,8 +79,7 @@ def register_product(
     _render_html(products)
 
     # Compute live URL via ngrok endpoint
-    endpoint = os.getenv("PUBLIC_HOST_ENDPOINT", "https://splinter-bulgur-appease.ngrok-free.dev")
-    store_url = f"{endpoint}/output/store.html"
+    store_url = f"{config.PUBLIC_HOST_ENDPOINT}/output/store.html"
     logger.info(f"[storefront] Product '{product_name}' registered. Live storefront URL: {store_url}")
     return store_url
 
@@ -84,8 +89,21 @@ def _render_html(products: list[dict]) -> None:
     cards_html = ""
     for p in products:
         feats = "".join(f"<li>✨ {f}</li>" for f in p.get("features", [])[:3])
+        
+        img_html = ""
+        if p.get("image"):
+            # Ensure it is a clean web path relative to the store.html file
+            img_src = p["image"]
+            if img_src.startswith("output/"):
+                img_src = img_src[len("output/"):]
+            elif img_src.startswith("output\\"):
+                img_src = img_src[len("output\\"):]
+            img_src = img_src.replace("\\", "/")
+            img_html = f'<img src="{img_src}" class="product-img" alt="{p["name"]}">'
+
         cards_html += f"""
         <div class="card">
+            {img_html}
             <div class="badge">{p.get('niche', 'Trending')}</div>
             <h2 class="title">{p['name']}</h2>
             <div class="price">{p['price']}</div>
@@ -114,6 +132,7 @@ def _render_html(products: list[dict]) -> None:
         .grid {{ width: 100%; max-width: 480px; display: flex; flex-direction: column; gap: 18px; }}
         .card {{ background: #111827; border: 1px solid #1f2937; border-radius: 18px; padding: 20px; box-shadow: 0 10px 25px rgba(0,0,0,0.3); transition: transform 0.2s; position: relative; overflow: hidden; }}
         .card:hover {{ transform: translateY(-2px); border-color: #4f46e5; }}
+        .product-img {{ width: 100%; height: 220px; object-fit: contain; background: #1f2937; border-radius: 12px; margin-bottom: 14px; border: 1px solid #374151; }}
         .badge {{ display: inline-block; padding: 4px 10px; background: rgba(99,102,241,0.15); color: #818cf8; font-size: 11px; font-weight: 700; text-transform: uppercase; border-radius: 20px; margin-bottom: 8px; letter-spacing: 0.5px; }}
         .title {{ font-size: 18px; font-weight: 700; color: #ffffff; margin-bottom: 4px; }}
         .price {{ font-size: 22px; font-weight: 800; color: #10b981; margin-bottom: 12px; }}
@@ -121,6 +140,7 @@ def _render_html(products: list[dict]) -> None:
         .buy-btn {{ display: block; width: 100%; text-align: center; background: linear-gradient(135deg, #10b981, #059669); color: #ffffff; text-decoration: none; font-weight: 700; font-size: 15px; padding: 14px; border-radius: 12px; box-shadow: 0 4px 14px rgba(16, 185, 129, 0.3); transition: opacity 0.2s; }}
         .buy-btn:hover {{ opacity: 0.9; }}
         footer {{ margin-top: 36px; text-align: center; font-size: 12px; color: #4b5563; }}
+        .disclosure {{ font-size: 11px; color: #6b7280; text-align: center; margin: 12px auto; max-width: 480px; width: 100%; line-height: 1.4; padding: 0 8px; }}
     </style>
 </head>
 <body>
@@ -129,11 +149,14 @@ def _render_html(products: list[dict]) -> None:
         <p class="sub">Curated Deals & Viral Tech Finds</p>
     </header>
 
+    <div class="disclosure">{AMAZON_DISCLOSURE_TEXT}</div>
+
     <div class="grid">
         {cards_html}
     </div>
 
     <footer>
+        <div class="disclosure" style="margin-bottom: 12px; margin-top: 0;">{AMAZON_DISCLOSURE_TEXT}</div>
         &copy; {datetime.now().year} Yasna Store • Amazon Associate Storefront
     </footer>
 </body>
@@ -143,3 +166,4 @@ def _render_html(products: list[dict]) -> None:
         f.write(html_content)
     with open("output/index.html", "w", encoding="utf-8") as f:
         f.write(html_content)
+
