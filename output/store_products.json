@@ -1,5 +1,20 @@
 [
   {
+    "name": "Beats Powerbeats Pro 2",
+    "price": "$199.95",
+    "niche": "fitness tech",
+    "link": "https://www.amazon.in/dp/B0GK22XD58/?tag=giftgaller036-21",
+    "features": [
+      "wireless earbuds",
+      "long battery life",
+      "sweat-resistant",
+      "water-resistant",
+      "multiple ear tip sizes"
+    ],
+    "image": "output\\assets\\images\\product_B0GK22XD58.jpg",
+    "updated_at": "2026-07-10 15:26"
+  },
+  {
     "name": "Anker Instant Read Thermometer",
     "price": "$8.99",
     "niche": "kitchen gadgets",
