@@ -112,15 +112,23 @@ def send_copy_paste_to_telegram(
     hashtags_str = " ".join(hashtags) if hashtags else ""
     ig_title = f"{product_name} — Best Deal on Amazon India!"[:100]
 
+    # Clean the storefront URL link to be the clean directory link
+    clean_storefront_url = storefront_url
+    if storefront_url.endswith("/store.html"):
+        clean_storefront_url = storefront_url[:-len("store.html")]
+
+    # Append website link directly to the copy-paste caption
+    caption_text_with_link = f"{caption_text}\n\n👉 Link in bio to buy: {clean_storefront_url}"
+
     message = (
         "━━━━━━━━━━━━━━━━━━━━\n"
         "*COPY-PASTE FOR INSTAGRAM*\n"
         "━━━━━━━━━━━━━━━━━━━━\n\n"
         f"*REEL TITLE:*\n{ig_title}\n\n"
-        f"*CAPTION:*\n{caption_text}\n\n"
+        f"*CAPTION:*\n{caption_text_with_link}\n\n"
         f"*HASHTAGS:*\n{hashtags_str}\n\n"
         f"*AFFILIATE LINK (put in bio):*\n{affiliate_url}\n\n"
-        f"*STOREFRONT:*\n{storefront_url}\n"
+        f"*STOREFRONT:*\n{clean_storefront_url}\n"
         "━━━━━━━━━━━━━━━━━━━━"
     )
     if len(message) > 4096:
