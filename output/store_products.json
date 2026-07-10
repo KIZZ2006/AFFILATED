@@ -1,5 +1,20 @@
 [
   {
+    "name": "Anker Instant Read Thermometer",
+    "price": "$8.99",
+    "niche": "kitchen gadgets",
+    "link": "https://www.amazon.in/dp/B0BGX4RG9B/?tag=giftgaller036-21",
+    "features": [
+      "fast temperature reading",
+      "accurate results",
+      "waterproof",
+      "magnetic back",
+      "compact design"
+    ],
+    "image": "output\\assets\\images\\product_B0BGX4RG9B.jpg",
+    "updated_at": "2026-07-10 15:12"
+  },
+  {
     "name": "Dyson Supersonic Hair Dryer",
     "price": "$399.99",
     "niche": "beauty and personal care gadgets",
