@@ -1,5 +1,20 @@
 [
   {
+    "name": "KitchenAid Stand Mixer",
+    "price": "$299.99",
+    "niche": "kitchen gadgets",
+    "link": "https://www.amazon.in/dp/B096V98SH8/?tag=giftgaller036-21",
+    "features": [
+      "10 speeds",
+      "stainless steel bowl",
+      "multiple attachments",
+      "tilt-back head",
+      "non-slip base"
+    ],
+    "image": "output\\assets\\images\\product_B096V98SH8.jpg",
+    "updated_at": "2026-07-10 16:07"
+  },
+  {
     "name": "Clarisonic Mia Smart",
     "price": "$169.00",
     "niche": "beauty and personal care gadgets",
