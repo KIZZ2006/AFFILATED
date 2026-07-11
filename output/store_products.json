@@ -1,5 +1,20 @@
 [
   {
+    "name": "Cuisinart Coffee Maker",
+    "price": "$99.95",
+    "niche": "kitchen gadgets",
+    "link": "https://www.amazon.in/dp/B0922MDDWG/?tag=giftgaller036-21",
+    "features": [
+      "12-cup capacity",
+      "programmable timer",
+      "adjustable brew strength",
+      "built-in grinder",
+      "stainless steel"
+    ],
+    "image": "output\\assets\\images\\product_B0922MDDWG.jpg",
+    "updated_at": "2026-07-11 11:45"
+  },
+  {
     "name": "Conair Infiniti Pro Spin Air Brush",
     "price": "$49.99",
     "niche": "beauty and personal care gadgets",
