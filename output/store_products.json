@@ -1,5 +1,20 @@
 [
   {
+    "name": "Conair Infiniti Pro Spin Air Brush",
+    "price": "$49.99",
+    "niche": "beauty and personal care gadgets",
+    "link": "https://www.amazon.in/dp/B0DKFW7LRC/?tag=giftgaller036-21",
+    "features": [
+      "2-in-1 styling",
+      "hot air brush",
+      "ceramic coating",
+      "multiple heat settings",
+      "cool shot"
+    ],
+    "image": null,
+    "updated_at": "2026-07-11 11:32"
+  },
+  {
     "name": "Fitbit Inspire 2",
     "price": "$99.95",
     "niche": "fitness tech",
