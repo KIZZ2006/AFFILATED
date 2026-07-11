@@ -1,5 +1,20 @@
 [
   {
+    "name": "Fitbit Inspire 2",
+    "price": "$99.95",
+    "niche": "fitness tech",
+    "link": "https://www.amazon.in/dp/B0F7XWCCY3/?tag=giftgaller036-21",
+    "features": [
+      "heart rate monitoring",
+      "sleep tracking",
+      "fitness tracking",
+      "guided breathing sessions",
+      "water resistance"
+    ],
+    "image": null,
+    "updated_at": "2026-07-11 10:46"
+  },
+  {
     "name": "KitchenAid Stand Mixer",
     "price": "$299.99",
     "niche": "kitchen gadgets",
