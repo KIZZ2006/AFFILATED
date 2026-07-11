@@ -1,5 +1,20 @@
 [
   {
+    "name": "Garmin Forerunner 945",
+    "price": "$649.99",
+    "niche": "fitness tech",
+    "link": "https://www.amazon.in/dp/B09BR252DC/?tag=giftgaller036-21",
+    "features": [
+      "GPS tracking",
+      "heart rate monitoring",
+      "music storage",
+      "performance condition monitoring",
+      "smart notifications"
+    ],
+    "image": "output\\assets\\images\\product_B09BR252DC.jpg",
+    "updated_at": "2026-07-11 13:04"
+  },
+  {
     "name": "Cuisinart Coffee Maker",
     "price": "$99.95",
     "niche": "kitchen gadgets",
