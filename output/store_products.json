@@ -1,5 +1,19 @@
 [
   {
+    "name": "Anker Wireless Charging Pad",
+    "price": "₹912",
+    "niche": "tech gadgets",
+    "link": "https://www.amazon.in/dp/B0DPQB4FNC/?tag=giftgaller036-21",
+    "features": [
+      "fast charging",
+      "compact design",
+      "LED indicator",
+      "compatible with iPhone and Samsung"
+    ],
+    "image": "output\\assets\\images\\product_B0DPQB4FNC.jpg",
+    "updated_at": "2026-07-14 12:00"
+  },
+  {
     "name": "L'Oréal Paris Pure-Clay Detox & Brighten Face Mask",
     "price": "₹1078",
     "niche": "beauty and personal care gadgets",
