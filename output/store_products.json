@@ -1,5 +1,20 @@
 [
   {
+    "name": "Neutrogena Hydrating Facial Moisturizer",
+    "price": "₹912",
+    "niche": "beauty and personal care gadgets",
+    "link": "https://www.amazon.in/dp/B0CRRTQJXR/?tag=giftgaller036-21",
+    "features": [
+      "hyaluronic acid",
+      "gentle formula",
+      "non-comedogenic",
+      "fragrance-free",
+      "oil-free"
+    ],
+    "image": "output\\assets\\images\\product_B0CRRTQJXR.jpg",
+    "updated_at": "2026-07-14 11:55"
+  },
+  {
     "name": "Black+Decker Toaster Oven",
     "price": "₹4149",
     "niche": "kitchen gadgets",
