@@ -1,5 +1,19 @@
 [
   {
+    "name": "Autown Car Phone Holder",
+    "price": "₹1327",
+    "niche": "car accessories",
+    "link": "https://www.amazon.in/dp/B0DXCWSMBQ/?tag=giftgaller036-21",
+    "features": [
+      "adjustable arm",
+      "360-degree rotation",
+      "universal compatibility",
+      "sturdy base"
+    ],
+    "image": "output\\assets\\images\\product_B0DXCWSMBQ.jpg",
+    "updated_at": "2026-07-14 12:44"
+  },
+  {
     "name": "VicTsing Car Air Freshener",
     "price": "₹746",
     "niche": "car accessories",
