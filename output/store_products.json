@@ -1,5 +1,20 @@
 [
   {
+    "name": "L'Oréal Paris Pure-Clay Detox & Brighten Face Mask",
+    "price": "₹1078",
+    "niche": "beauty and personal care gadgets",
+    "link": "https://www.amazon.in/dp/B09HXRGX1L/?tag=giftgaller036-21",
+    "features": [
+      "clay mask",
+      "charcoal",
+      "gentle exfoliation",
+      "brightening formula",
+      "non-comedogenic"
+    ],
+    "image": "output\\assets\\images\\product_B09HXRGX1L.jpg",
+    "updated_at": "2026-07-14 11:58"
+  },
+  {
     "name": "Neutrogena Hydrating Facial Moisturizer",
     "price": "₹912",
     "niche": "beauty and personal care gadgets",
