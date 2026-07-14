@@ -1,5 +1,19 @@
 [
   {
+    "name": "Neutrogena Makeup Remover Wipes",
+    "price": "₹746",
+    "niche": "beauty and personal care gadgets",
+    "link": "https://www.amazon.in/dp/B0822WTMKS/?tag=giftgaller036-21",
+    "features": [
+      "gentle on skin",
+      "effective at removing makeup",
+      "pre-moistened wipes",
+      "travel-friendly"
+    ],
+    "image": "output\\assets\\images\\product_B0822WTMKS.jpg",
+    "updated_at": "2026-07-14 12:30"
+  },
+  {
     "name": "Aukey Car Phone Mount",
     "price": "₹1078",
     "niche": "car accessories",
