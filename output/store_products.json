@@ -1,5 +1,19 @@
 [
   {
+    "name": "VicTsing Car Air Freshener",
+    "price": "₹746",
+    "niche": "car accessories",
+    "link": "https://www.amazon.in/dp/B0F8R32TJM/?tag=giftgaller036-21",
+    "features": [
+      "long-lasting fragrance",
+      "easy to use",
+      "adjustable scent",
+      "compact design"
+    ],
+    "image": "output\\assets\\images\\product_B0F8R32TJM.jpg",
+    "updated_at": "2026-07-14 12:41"
+  },
+  {
     "name": "Zone Tech Car Steering Wheel Cover",
     "price": "₹1078",
     "niche": "car accessories",
