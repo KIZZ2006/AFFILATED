@@ -1,5 +1,19 @@
 [
   {
+    "name": "Mpow Car Phone Charger",
+    "price": "₹912",
+    "niche": "car accessories",
+    "link": "https://www.amazon.in/dp/B0CV12C47D/?tag=giftgaller036-21",
+    "features": [
+      "dual USB ports",
+      "fast charging",
+      "compact design",
+      "LED indicator"
+    ],
+    "image": "output\\assets\\images\\product_B0CV12C47D.jpg",
+    "updated_at": "2026-07-14 12:34"
+  },
+  {
     "name": "Neutrogena Makeup Remover Wipes",
     "price": "₹746",
     "niche": "beauty and personal care gadgets",
