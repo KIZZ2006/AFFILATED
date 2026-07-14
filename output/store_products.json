@@ -1,5 +1,19 @@
 [
   {
+    "name": "Aukey Car Phone Mount",
+    "price": "₹1078",
+    "niche": "car accessories",
+    "link": "https://www.amazon.in/dp/B0CFL4SPTY/?tag=giftgaller036-21",
+    "features": [
+      "adjustable arm",
+      "360-degree rotation",
+      "universal compatibility",
+      "sturdy base"
+    ],
+    "image": "output\\assets\\images\\product_B0CFL4SPTY.jpg",
+    "updated_at": "2026-07-14 12:27"
+  },
+  {
     "name": "Anker Wireless Charging Pad",
     "price": "₹912",
     "niche": "tech gadgets",
