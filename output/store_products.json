@@ -1,5 +1,20 @@
 [
   {
+    "name": "L'Oréal Paris Revitalift Derm Intensives",
+    "price": "$24.99",
+    "niche": "beauty and personal care gadgets",
+    "link": "https://www.amazon.in/dp/B0GC7G7QKY/?tag=giftgaller036-21",
+    "features": [
+      "anti-aging",
+      "hyaluronic acid",
+      "vitamin C",
+      "gentle exfoliation",
+      "nourishing formula"
+    ],
+    "image": "output\\assets\\images\\product_B0GC7G7QKY.jpg",
+    "updated_at": "2026-07-14 11:28"
+  },
+  {
     "name": "Garmin Forerunner 945",
     "price": "$649.99",
     "niche": "fitness tech",
