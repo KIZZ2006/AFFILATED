@@ -1,5 +1,19 @@
 [
   {
+    "name": "Anker USB Hub",
+    "price": "₹1327",
+    "niche": "tech and desk gadgets",
+    "link": "https://www.amazon.in/dp/B0DXJQT19B/?tag=giftgaller036-21",
+    "features": [
+      "4-port hub",
+      "compact design",
+      "easy to use",
+      "compatible with USB 3.0"
+    ],
+    "image": "output\\assets\\images\\product_B0DXJQT19B.jpg",
+    "updated_at": "2026-07-14 12:47"
+  },
+  {
     "name": "Autown Car Phone Holder",
     "price": "₹1327",
     "niche": "car accessories",
