@@ -1,5 +1,20 @@
 [
   {
+    "name": "Hamilton Beach Slow Cooker",
+    "price": "$49.99",
+    "niche": "kitchen gadgets",
+    "link": "https://www.amazon.in/dp/B07DKXNW2M/?tag=giftgaller036-21",
+    "features": [
+      "6-quart capacity",
+      "programmable timer",
+      "multiple heat settings",
+      "lid clip",
+      "dishwasher-safe"
+    ],
+    "image": "output\\assets\\images\\product_B07DKXNW2M.jpg",
+    "updated_at": "2026-07-14 11:33"
+  },
+  {
     "name": "L'Oréal Paris Revitalift Derm Intensives",
     "price": "$24.99",
     "niche": "beauty and personal care gadgets",
