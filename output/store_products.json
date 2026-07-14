@@ -1,5 +1,20 @@
 [
   {
+    "name": "Black+Decker Toaster Oven",
+    "price": "₹4149",
+    "niche": "kitchen gadgets",
+    "link": "https://www.amazon.in/dp/B0D2Y3YB67/?tag=giftgaller036-21",
+    "features": [
+      "4-slice capacity",
+      "convection cooking",
+      "digital controls",
+      "compact design",
+      "dishwasher-safe"
+    ],
+    "image": "output\\assets\\images\\product_B0D2Y3YB67.jpg",
+    "updated_at": "2026-07-14 11:38"
+  },
+  {
     "name": "Hamilton Beach Slow Cooker",
     "price": "$49.99",
     "niche": "kitchen gadgets",
